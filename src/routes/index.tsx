@@ -17,7 +17,7 @@ import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
 import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
 
 // ============================================================
-// DADOS DE CONTATO — PLACEHOLDER. Substituir pelos dados reais.
+// DADOS DE CONTATO — dados reais.
 // ============================================================
 const WHATSAPP_NUMBER = "5581998982408";
 const WHATSAPP_DISPLAY = "(81) 99898-2408";
