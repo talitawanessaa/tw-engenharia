@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Projetos de combate a incêndio, pânico e gás, AVCB por termo de compromisso e definitivo, CLCB, vistoria de sistemas e assessoria junto ao Corpo de Bombeiros.",
+          "Projetos de combate a incêndio e pânico, AVCB por termo de compromisso e definitivo, CLCB, vistoria de sistemas e assessoria junto ao Corpo de Bombeiros.",
       },
       {
         property: "og:title",
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Projetos de incêndio, pânico e gás, AVCB e CLCB, vistoria de sistemas e assessoria para AVCB.",
+          "Projetos de combate a incêndio e pânico, AVCB e CLCB, vistoria de sistemas e assessoria para AVCB.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -120,7 +120,7 @@ function Hero() {
             Projeto combate incêndio e pânico no Corpo de Bombeiros.
           </h1>
           <p className="mt-6 max-w-[52ch] text-pretty text-base text-muted-foreground sm:text-lg">
-            Projetos de combate a incêndio, pânico e gás, AVCB por termo de compromisso e
+            Projetos de combate a incêndio e pânico, AVCB por termo de compromisso e
             definitivo, CLCB, vistoria dos sistemas e assessoria completa — com responsabilidade
             técnica assinada do início ao fim.
           </p>
@@ -143,7 +143,7 @@ function Hero() {
             </a>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] text-muted-foreground">
-            {["Incêndio, pânico e gás", "AVCB & CLCB", "Vistoria de sistemas", "Assessoria"].map(
+            {["Combate a incêndio e pânico", "AVCB & CLCB", "Vistoria de sistemas", "Assessoria"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <span className="text-primary">✓</span> {item}
@@ -219,7 +219,7 @@ const SERVICES = [
     icon: Flame,
     title: "Projeto de combate a incêndio e pânico",
     description:
-      "Elaboração técnica conforme as normas do Corpo de Bombeiros, incluindo também o projeto de gás (GLP/GN): pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
+      "Elaboração técnica conforme as normas do Corpo de Bombeiros: pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
   },
   {
     icon: FileCheck2,
@@ -317,10 +317,10 @@ const STEPS: { title: string; description: string; options?: string[] }[] = [
   {
     title: "Vistoria dos sistemas",
     description:
-      "Visita ao local para conferir se os sistemas de combate a incêndio e de gás estão em ordem.",
+      "Visita ao local para conferir se os sistemas de combate a incêndio estão em ordem.",
   },
   {
-    title: "Projeto de combate a incêndio e gás",
+    title: "Projeto de combate a incêndio",
     description: "Elaboração das pranchas e memoriais técnicos conforme a norma do Corpo de Bombeiros.",
   },
   {
