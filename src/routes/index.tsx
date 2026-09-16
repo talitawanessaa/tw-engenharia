@@ -332,7 +332,7 @@ function Processo() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-          Oito passos, do primeiro contato ao documento.
+          Quatro passos, do primeiro contato à elaboração.
         </h2>
         <div className="relative mt-12">
           <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
