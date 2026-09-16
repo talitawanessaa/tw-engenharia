@@ -319,11 +319,6 @@ const STEPS: { title: string; description: string; options?: string[] }[] = [
     description:
       "Envio da minha proposta com o escopo, o prazo e o valor — junto com o formulário de cadastro para formalizar o serviço.",
   },
-  {
-    title: "Elaboração do que foi solicitado",
-    description:
-      "Com a proposta aprovada, começo a elaboração de tudo o que ficou definido nela — projeto, AVCB, CLCB ou vistoria, conforme o combinado.",
-  },
 ];
 
 function Processo() {
@@ -332,7 +327,7 @@ function Processo() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-          Quatro passos, do primeiro contato à elaboração.
+          Três passos, do primeiro contato à proposta.
         </h2>
         <div className="relative mt-12">
           <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
