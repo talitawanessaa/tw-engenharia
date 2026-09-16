@@ -322,25 +322,7 @@ const STEPS: { title: string; description: string; options?: string[] }[] = [
   {
     title: "Elaboração do que foi solicitado",
     description:
-      "Com a proposta aprovada, começo a elaboração de tudo o que ficou definido nela — na sequência, você acompanha cada etapa abaixo.",
-  },
-  {
-    title: "Vistoria dos sistemas",
-    description:
-      "Visita ao local para conferir se os sistemas de combate a incêndio estão em ordem.",
-  },
-  {
-    title: "Projeto de combate a incêndio",
-    description: "Elaboração das pranchas e memoriais técnicos conforme a norma do Corpo de Bombeiros.",
-  },
-  {
-    title: "Protocolo e assessoria",
-    description:
-      "Abertura do processo e acompanhamento junto ao Corpo de Bombeiros até a conclusão da análise.",
-  },
-  {
-    title: "AVCB (termo de compromisso ou definitivo) ou CLCB",
-    description: "Documento emitido e entregue — seu imóvel regularizado.",
+      "Com a proposta aprovada, começo a elaboração de tudo o que ficou definido nela — projeto, AVCB, CLCB ou vistoria, conforme o combinado.",
   },
 ];
 
