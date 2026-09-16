@@ -301,23 +301,25 @@ function Servicos() {
 const STEPS = [
   {
     title: "Contato",
-    description: "Você envia o tipo de imóvel e o que precisa resolver.",
+    description: "Você conta o tipo de imóvel e o que precisa: projeto, AVCB, CLCB ou vistoria.",
   },
   {
-    title: "Visita e análise",
-    description: "Levantamento no local e diagnóstico das adequações necessárias.",
+    title: "Vistoria dos sistemas",
+    description:
+      "Visita ao local para conferir se os sistemas de combate a incêndio e de gás estão em ordem.",
   },
   {
-    title: "Projeto",
-    description: "Elaboração das pranchas e memoriais técnicos conforme a norma.",
+    title: "Projeto de combate a incêndio e gás",
+    description: "Elaboração das pranchas e memoriais técnicos conforme a norma do Corpo de Bombeiros.",
   },
   {
-    title: "Aprovação no Corpo de Bombeiros",
-    description: "Protocolo e acompanhamento do processo até a análise do órgão.",
+    title: "Protocolo e assessoria",
+    description:
+      "Abertura do processo e acompanhamento junto ao Corpo de Bombeiros até a conclusão da análise.",
   },
   {
-    title: "Emissão do AVCB / CLCB",
-    description: "Documento emitido e entregue — seu imóvel em conformidade.",
+    title: "AVCB (termo de compromisso ou definitivo) ou CLCB",
+    description: "Documento emitido e entregue — seu imóvel regularizado.",
   },
 ];
 
