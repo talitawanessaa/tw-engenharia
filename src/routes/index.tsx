@@ -19,9 +19,9 @@ import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
 // ============================================================
 // DADOS DE CONTATO — PLACEHOLDER. Substituir pelos dados reais.
 // ============================================================
-const WHATSAPP_NUMBER = "5500000000000";
-const WHATSAPP_DISPLAY = "(00) 00000-0000";
-const EMAIL = "contato@talitawanessa.eng.br";
+const WHATSAPP_NUMBER = "5581998982408";
+const WHATSAPP_DISPLAY = "(81) 99898-2408";
+const EMAIL = "talitaw.engg@gmail.com";
 const CREA = "CREA 1822120098/PE";
 
 export const Route = createFileRoute("/")({
