@@ -12,7 +12,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import talita1 from "@/assets/talita-1.jpg.asset.json";
-import talita2 from "@/assets/talita-2.jpg.asset.json";
+import perfil from "@/assets/perfil.png.asset.json";
 import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
 import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
 
@@ -22,7 +22,7 @@ import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
 const WHATSAPP_NUMBER = "5500000000000";
 const WHATSAPP_DISPLAY = "(00) 00000-0000";
 const EMAIL = "contato@talitawanessa.eng.br";
-const CREA = "CREA 0000000-D";
+const CREA = "CREA 1822120098/PE";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -155,7 +155,7 @@ function Hero() {
         <div className="lg:col-span-5">
           <figure className="rounded-2xl border border-border bg-card p-3 shadow-sm">
             <img
-              src={talita2.url}
+              src={perfil.url}
               alt="Talita Wanessa, engenheira civil e de segurança do trabalho"
               className="w-full rounded-xl border border-border object-cover"
             />

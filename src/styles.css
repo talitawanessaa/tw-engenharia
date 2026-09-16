@@ -47,25 +47,25 @@
 :root {
   --radius: 0.5rem;
   --background: oklch(0.973 0.006 90);
-  --foreground: oklch(0.24 0.014 250);
+  --foreground: oklch(0.25 0.03 264);
   --card: oklch(0.994 0.003 90);
-  --card-foreground: oklch(0.24 0.014 250);
+  --card-foreground: oklch(0.25 0.03 264);
   --popover: oklch(0.994 0.003 90);
-  --popover-foreground: oklch(0.24 0.014 250);
-  --primary: oklch(0.53 0.19 26);
+  --popover-foreground: oklch(0.25 0.03 264);
+  --primary: oklch(0.493 0.202 29.2);
   --primary-foreground: oklch(0.985 0.003 90);
   --secondary: oklch(0.93 0.008 90);
-  --secondary-foreground: oklch(0.28 0.014 250);
+  --secondary-foreground: oklch(0.28 0.03 264);
   --muted: oklch(0.935 0.007 90);
-  --muted-foreground: oklch(0.5 0.018 250);
-  --accent: oklch(0.95 0.02 26);
-  --accent-foreground: oklch(0.4 0.14 26);
+  --muted-foreground: oklch(0.5 0.03 264);
+  --accent: oklch(0.95 0.025 29);
+  --accent-foreground: oklch(0.42 0.17 29);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0.003 90);
-  --border: oklch(0.24 0.014 250 / 12%);
-  --input: oklch(0.24 0.014 250 / 16%);
-  --ring: oklch(0.53 0.19 26 / 40%);
-  --ink: oklch(0.215 0.012 250);
+  --border: oklch(0.25 0.03 264 / 12%);
+  --input: oklch(0.25 0.03 264 / 16%);
+  --ring: oklch(0.493 0.202 29.2 / 40%);
+  --ink: oklch(0.104 0.072 264.1);
   --ink-foreground: oklch(0.965 0.006 90);
 }
 
@@ -76,20 +76,20 @@
   --card-foreground: oklch(0.965 0.006 90);
   --popover: oklch(0.23 0.014 250);
   --popover-foreground: oklch(0.965 0.006 90);
-  --primary: oklch(0.62 0.19 26);
+  --primary: oklch(0.6 0.21 29.2);
   --primary-foreground: oklch(0.985 0.003 90);
-  --secondary: oklch(0.27 0.014 250);
+  --secondary: oklch(0.27 0.02 264);
   --secondary-foreground: oklch(0.965 0.006 90);
-  --muted: oklch(0.27 0.014 250);
-  --muted-foreground: oklch(0.7 0.014 250);
-  --accent: oklch(0.3 0.03 26);
-  --accent-foreground: oklch(0.9 0.06 26);
+  --muted: oklch(0.27 0.02 264);
+  --muted-foreground: oklch(0.7 0.02 264);
+  --accent: oklch(0.3 0.04 29);
+  --accent-foreground: oklch(0.9 0.06 29);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0.003 90);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.62 0.19 26 / 40%);
-  --ink: oklch(0.14 0.01 250);
+  --ring: oklch(0.6 0.21 29.2 / 40%);
+  --ink: oklch(0.09 0.06 264);
   --ink-foreground: oklch(0.965 0.006 90);
 }
 
@@ -105,11 +105,11 @@
   }
 }
 
-/* Grade de papel milimetrado */
+/* Grade de papel milimetrado (tom azul-marinho da marca) */
 @utility grid-paper {
   background-image:
-    linear-gradient(oklch(0.24 0.014 250 / 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(0.24 0.014 250 / 0.05) 1px, transparent 1px);
+    linear-gradient(oklch(0.25 0.03 264 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.25 0.03 264 / 0.05) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
