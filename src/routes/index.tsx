@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Projetos de combate a incêndio e pânico, processos de AVCB e CLCB junto ao Corpo de Bombeiros, laudos técnicos e consultoria de segurança do trabalho.",
+          "Projetos de combate a incêndio, pânico e gás, AVCB por termo de compromisso e definitivo, CLCB, vistoria de sistemas e assessoria junto ao Corpo de Bombeiros.",
       },
       {
         property: "og:title",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Projetos de incêndio e pânico, AVCB e CLCB, laudos técnicos e consultoria de segurança do trabalho.",
+          "Projetos de incêndio, pânico e gás, AVCB e CLCB, vistoria de sistemas e assessoria para AVCB.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -116,9 +116,9 @@ function Hero() {
             Projetos de incêndio e pânico aprovados no Corpo de Bombeiros.
           </h1>
           <p className="mt-6 max-w-[52ch] text-pretty text-base text-muted-foreground sm:text-lg">
-            Elaboração e aprovação de projetos, processos de AVCB e CLCB, laudos técnicos e
-            consultoria de segurança do trabalho — com responsabilidade técnica assinada do início
-            ao fim.
+            Projetos de combate a incêndio, pânico e gás, AVCB por termo de compromisso e
+            definitivo, CLCB, vistoria dos sistemas e assessoria completa — com responsabilidade
+            técnica assinada do início ao fim.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
@@ -139,7 +139,7 @@ function Hero() {
             </a>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] text-muted-foreground">
-            {["Projetos de incêndio e pânico", "AVCB & CLCB", "Laudos técnicos", "Consultoria"].map(
+            ["Incêndio, pânico e gás", "AVCB & CLCB", "Vistoria de sistemas", "Assessoria"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <span className="text-primary">✓</span> {item}
