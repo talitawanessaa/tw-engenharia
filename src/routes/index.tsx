@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import talita1 from "@/assets/talita-1.jpg.asset.json";
 import talita2 from "@/assets/talita-2.jpg.asset.json";
+import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
+import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
 
 // ============================================================
 // DADOS DE CONTATO — PLACEHOLDER. Substituir pelos dados reais.
@@ -65,9 +67,11 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#" className="flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-md bg-primary font-mono text-sm font-bold text-primary-foreground">
-            TW
-          </span>
+          <img
+            src={logoMarkRed.url}
+            alt="Logomarca TW — Talita Wanessa"
+            className="size-9 rounded-md object-contain"
+          />
           <span className="leading-tight">
             <span className="block font-display text-sm font-bold tracking-tight">
               Talita Wanessa
@@ -521,9 +525,11 @@ function Footer() {
     <footer className="border-t border-border bg-ink text-ink-foreground">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
         <div className="flex items-center gap-3">
-          <span className="grid size-8 place-items-center rounded-md bg-primary font-mono text-xs font-bold text-primary-foreground">
-            TW
-          </span>
+          <img
+            src={logoWordWhite.url}
+            alt="Talita Wanessa — Projetos de Segurança contra Incêndios"
+            className="h-10 w-auto"
+          />
           <p className="font-mono text-[11px] text-ink-foreground/70">
             Talita Wanessa · Engenheira Civil e de Segurança do Trabalho
           </p>
