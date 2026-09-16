@@ -302,10 +302,17 @@ function Servicos() {
   );
 }
 
-const STEPS = [
+const STEPS: { title: string; description: string; options?: string[] }[] = [
   {
     title: "Contato",
-    description: "Você conta o tipo de imóvel e o que precisa: projeto, AVCB, CLCB ou vistoria.",
+    description:
+      "Você me fala o tipo de imóvel e o que precisa. Dá uma olhada nas opções do que costuma ser pedido:",
+    options: ["PPCIP", "AVCB ou CLCB", "Vistoria", "PPCIP, AVCB e Vistoria"],
+  },
+  {
+    title: "Levantamento arquitetônico (DWG)",
+    description:
+      "Você me envia os arquivos DWG do levantamento arquitetônico — são eles a base do projeto de incêndio. Não tem? Sem problema: eu faço o levantamento para você, com foco no que a segurança contra incêndio precisa.",
   },
   {
     title: "Vistoria dos sistemas",
@@ -358,6 +365,18 @@ function Processo() {
                   >
                     <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                    {step.options && (
+                      <ul className="mt-3 flex flex-wrap gap-2">
+                        {step.options.map((option) => (
+                          <li
+                            key={option}
+                            className="rounded-full border border-primary/40 bg-primary/5 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.08em] text-primary"
+                          >
+                            {option}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </li>
               );
