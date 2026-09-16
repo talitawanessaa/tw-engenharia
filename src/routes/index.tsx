@@ -302,10 +302,17 @@ function Servicos() {
   );
 }
 
-const STEPS = [
+const STEPS: { title: string; description: string; options?: string[] }[] = [
   {
     title: "Contato",
-    description: "Você conta o tipo de imóvel e o que precisa: projeto, AVCB, CLCB ou vistoria.",
+    description:
+      "Você me fala o tipo de imóvel e o que precisa. Dá uma olhada nas opções do que costuma ser pedido:",
+    options: ["PPCIP", "AVCB ou CLCB", "Vistoria", "PPCIP, AVCB e Vistoria"],
+  },
+  {
+    title: "Levantamento arquitetônico (DWG)",
+    description:
+      "Você me envia os arquivos DWG do levantamento arquitetônico — são eles a base do projeto de incêndio. Não tem? Sem problema: eu faço o levantamento para você, com foco no que a segurança contra incêndio precisa.",
   },
   {
     title: "Vistoria dos sistemas",
@@ -333,7 +340,7 @@ function Processo() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-          Cinco passos, do primeiro contato ao documento.
+          Seis passos, do primeiro contato ao documento.
         </h2>
         <div className="relative mt-12">
           <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
@@ -358,6 +365,18 @@ function Processo() {
                   >
                     <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                    {step.options && (
+                      <ul className="mt-3 flex flex-wrap gap-2">
+                        {step.options.map((option) => (
+                          <li
+                            key={option}
+                            className="rounded-full border border-primary/40 bg-primary/5 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.08em] text-primary"
+                          >
+                            {option}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </li>
               );
