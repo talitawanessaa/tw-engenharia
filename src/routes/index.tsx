@@ -12,7 +12,6 @@ import {
   MessageCircle,
 } from "lucide-react";
 import talita1 from "@/assets/talita-1.jpg.asset.json";
-import talita2 from "@/assets/talita-2.jpg.asset.json";
 import perfil from "@/assets/perfil.png.asset.json";
 import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
 import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
