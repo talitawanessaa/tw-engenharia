@@ -310,9 +310,9 @@ const STEPS: { title: string; description: string; options?: string[] }[] = [
     options: ["PPCIP", "AVCB ou CLCB", "Vistoria", "PPCIP, AVCB e Vistoria"],
   },
   {
-    title: "Levantamento arquitetônico (DWG)",
+    title: "Levantamento arquitetônico",
     description:
-      "Você me envia os arquivos DWG do levantamento arquitetônico — são eles a base do projeto de incêndio. Não tem? Sem problema: eu faço o levantamento para você, com foco no que a segurança contra incêndio precisa.",
+      "Você me envia o levantamento arquitetônico do imóvel — é ele a base do projeto de incêndio. Pode ser em DWG ou PDF. Não tem? Sem problema: eu faço o levantamento para você, com foco no que a segurança contra incêndio precisa.",
   },
   {
     title: "Proposta e cadastro",
