@@ -1,24 +1,575 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
+import {
+  Flame,
+  FileCheck2,
+  ClipboardCheck,
+  FileSearch,
+  HardHat,
+  ArrowRight,
+  Phone,
+  Mail,
+  MessageCircle,
+} from "lucide-react";
+import plantaImg from "@/assets/planta-incendio.jpg";
+import sobreImg from "@/assets/sobre.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+// ============================================================
+// DADOS DE CONTATO — PLACEHOLDER. Substituir pelos dados reais.
+// ============================================================
+const WHATSAPP_NUMBER = "5500000000000";
+const WHATSAPP_DISPLAY = "(00) 00000-0000";
+const EMAIL = "contato@talitawanessa.eng.br";
+const CREA = "CREA 0000000-D";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Talita Wanessa · Engenharia de Incêndio, AVCB e CLCB" },
+      {
+        name: "description",
+        content:
+          "Projetos de combate a incêndio e pânico, processos de AVCB e CLCB junto ao Corpo de Bombeiros, laudos técnicos e consultoria de segurança do trabalho.",
+      },
+      {
+        property: "og:title",
+        content: "Talita Wanessa · Engenharia de Incêndio, AVCB e CLCB",
+      },
+      {
+        property: "og:description",
+        content:
+          "Projetos de incêndio e pânico, AVCB e CLCB, laudos técnicos e consultoria de segurança do trabalho.",
+      },
+      { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function waLink(message?: string) {
+  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}
+
+function SectionLabel({ children }: { children: string }) {
+  return (
+    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">{children}</p>
+  );
+}
+
+function Header() {
+  return (
+    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <a href="#" className="flex items-center gap-3">
+          <span className="grid size-9 place-items-center rounded-md bg-primary font-mono text-sm font-bold text-primary-foreground">
+            TW
+          </span>
+          <span className="leading-tight">
+            <span className="block font-display text-sm font-bold tracking-tight">
+              Talita Wanessa
+            </span>
+            <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+              Eng. Civil · Segurança do Trabalho
+            </span>
+          </span>
+        </a>
+        <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
+          <a href="#sobre" className="transition-colors hover:text-foreground">
+            Sobre
+          </a>
+          <a href="#servicos" className="transition-colors hover:text-foreground">
+            Serviços
+          </a>
+          <a href="#processo" className="transition-colors hover:text-foreground">
+            Processo
+          </a>
+          <a href="#contato" className="transition-colors hover:text-foreground">
+            Contato
+          </a>
+        </nav>
+        <a
+          href="#contato"
+          className="hidden rounded-md bg-ink px-4 py-2 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary sm:inline-flex"
+        >
+          Solicitar orçamento
+        </a>
+      </div>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="grid-paper relative overflow-hidden border-b border-border">
+      <div className="pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-primary/10 blur-3xl" />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 sm:py-24">
+        <div className="lg:col-span-7">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            <span className="size-1.5 rounded-full bg-primary" />
+            {CREA} · Registro ativo
+          </span>
+          <h1 className="mt-6 max-w-[22ch] font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            Projetos de incêndio e pânico aprovados no Corpo de Bombeiros.
+          </h1>
+          <p className="mt-6 max-w-[52ch] text-pretty text-base text-muted-foreground sm:text-lg">
+            Elaboração e aprovação de projetos, processos de AVCB e CLCB, laudos técnicos e
+            consultoria de segurança do trabalho — com responsabilidade técnica assinada do início
+            ao fim.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="#contato"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Solicitar orçamento
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+            <a
+              href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3.5 text-sm font-semibold transition-colors hover:border-primary/40"
+            >
+              <MessageCircle className="size-4 text-primary" aria-hidden="true" />
+              Falar no WhatsApp
+            </a>
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] text-muted-foreground">
+            {["Projetos de incêndio e pânico", "AVCB & CLCB", "Laudos técnicos", "Consultoria"].map(
+              (item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <span className="text-primary">✓</span> {item}
+                </li>
+              ),
+            )}
+          </ul>
+        </div>
+        <div className="lg:col-span-5">
+          <figure className="rounded-2xl border border-border bg-card p-3 shadow-sm">
+            <div className="flex items-center justify-between px-1 pb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              <span>Prancha 01 · Rotas de fuga</span>
+              <span>Escala 1:50</span>
+            </div>
+            <img
+              src={plantaImg}
+              alt="Planta baixa de edificação comercial com rotas de fuga destacadas em vermelho"
+              width={1024}
+              height={1024}
+              className="w-full rounded-xl border border-border object-cover"
+            />
+            <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              Projeto de combate a incêndio e pânico
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Sobre() {
+  return (
+    <section id="sobre" className="grid-paper-dark bg-ink text-ink-foreground">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <img
+            src={sobreImg}
+            alt="Mesa de trabalho de engenharia com capacete de segurança, laudos e projetos técnicos"
+            width={864}
+            height={1088}
+            loading="lazy"
+            className="w-full rounded-2xl border border-white/10 object-cover"
+          />
+        </div>
+        <div className="lg:col-span-7">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
+            (01) Sobre
+          </p>
+          <h2 className="mt-4 max-w-[26ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+            Engenharia de segurança com responsabilidade técnica.
+          </h2>
+          <p className="mt-5 max-w-[56ch] text-pretty leading-relaxed text-ink-foreground/75">
+            Sou Talita Wanessa, engenheira civil e de segurança do trabalho. Atuo na elaboração e
+            aprovação de projetos de combate a incêndio e pânico, conduzindo todo o processo de
+            AVCB e CLCB junto ao Corpo de Bombeiros — da análise do imóvel à emissão do documento.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              { label: "Registro", value: "CREA ativo", detail: "Responsabilidade técnica em cada projeto" },
+              { label: "Formação", value: "Formação dupla", detail: "Engenharia civil e segurança do trabalho" },
+              { label: "Foco", value: "Aprovação real", detail: "Do protocolo à emissão do AVCB" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/50">
+                  {item.label}
+                </p>
+                <p className="mt-2 font-display text-base font-bold">{item.value}</p>
+                <p className="mt-1 text-sm text-ink-foreground/60">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const SERVICES = [
+  {
+    icon: Flame,
+    title: "Projeto de combate a incêndio e pânico",
+    description:
+      "Elaboração técnica do projeto conforme as normas do Corpo de Bombeiros: pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Processo de AVCB",
+    description:
+      "Abertura, protocolo e acompanhamento do processo até a emissão do Alvará de Vistoria do Corpo de Bombeiros — o documento que comprova a regularidade do imóvel.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "CLCB",
+    description:
+      "Certificado de Licenciamento do Corpo de Bombeiros para imóveis e eventos, com toda a documentação técnica preparada e protocolada.",
+  },
+  {
+    icon: FileSearch,
+    title: "Laudos técnicos",
+    description:
+      "Vistoria e laudos com diagnóstico claro do estado do imóvel e plano de adequação priorizado, assinados com responsabilidade técnica.",
+  },
+  {
+    icon: HardHat,
+    title: "Consultoria de segurança do trabalho",
+    description:
+      "Assessoria contínua para manter o imóvel e a operação em conformidade: gestão de riscos, orientação normativa e apoio em fiscalizações.",
+  },
+];
+
+function Servicos() {
+  return (
+    <section id="servicos" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <SectionLabel>(02) Serviços</SectionLabel>
+          <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+            Da planta ao documento, tudo em um só lugar.
+          </h2>
+        </div>
+        <p className="max-w-[36ch] text-pretty text-sm text-muted-foreground">
+          Escopos técnicos completos, com pranchas, memoriais e acompanhamento junto ao órgão.
+        </p>
+      </div>
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {SERVICES.map(({ icon: Icon, title, description }, i) => (
+          <article
+            key={title}
+            className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40"
+          >
+            <div className="flex items-center justify-between">
+              <span className="grid size-11 place-items-center rounded-lg bg-primary/10 text-primary">
+                <Icon className="size-5" aria-hidden="true" />
+              </span>
+              <span className="font-mono text-xs text-muted-foreground/60">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <h3 className="mt-4 font-display text-lg font-bold tracking-tight">{title}</h3>
+            <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground">
+              {description}
+            </p>
+          </article>
+        ))}
+        <a
+          href="#contato"
+          className="group flex flex-col justify-between rounded-2xl border border-primary/40 bg-primary/5 p-6 transition-all hover:-translate-y-0.5 hover:bg-primary/10"
+        >
+          <span className="grid size-11 place-items-center rounded-lg bg-primary text-primary-foreground">
+            <ArrowRight className="size-5" aria-hidden="true" />
+          </span>
+          <div>
+            <h3 className="mt-4 font-display text-lg font-bold tracking-tight text-primary">
+              Não sei por onde começar
+            </h3>
+            <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground">
+              Descreva seu imóvel e eu indico o documento certo para regularizá-lo.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+  );
+}
+
+const STEPS = [
+  {
+    title: "Contato",
+    description: "Você envia o tipo de imóvel e o que precisa resolver.",
+  },
+  {
+    title: "Visita e análise",
+    description: "Levantamento no local e diagnóstico das adequações necessárias.",
+  },
+  {
+    title: "Projeto",
+    description: "Elaboração das pranchas e memoriais técnicos conforme a norma.",
+  },
+  {
+    title: "Aprovação no Corpo de Bombeiros",
+    description: "Protocolo e acompanhamento do processo até a análise do órgão.",
+  },
+  {
+    title: "Emissão do AVCB / CLCB",
+    description: "Documento emitido e entregue — seu imóvel em conformidade.",
+  },
+];
+
+function Processo() {
+  return (
+    <section id="processo" className="border-y border-border bg-secondary/40">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <SectionLabel>(03) Processo</SectionLabel>
+        <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+          Cinco passos, do primeiro contato ao documento.
+        </h2>
+        <div className="relative mt-12">
+          <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
+          <ol className="space-y-5">
+            {STEPS.map((step, i) => {
+              const last = i === STEPS.length - 1;
+              return (
+                <li key={step.title} className="relative flex gap-5">
+                  <span
+                    className={`z-10 grid size-10 shrink-0 place-items-center rounded-full border font-mono text-xs ${
+                      last
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-background text-primary"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div
+                    className={`flex-1 rounded-xl border p-5 ${
+                      last ? "border-primary/40 bg-primary/5" : "border-border bg-card"
+                    }`}
+                  >
+                    <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactForm() {
+  const [form, setForm] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+    imovel: "Comercial",
+    mensagem: "",
+  });
+
+  const set = (field: keyof typeof form) => (value: string) =>
+    setForm((f) => ({ ...f, [field]: value }));
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const message = [
+      `Olá, Talita! Meu nome é ${form.nome || "—"}.`,
+      `Tipo de imóvel: ${form.imovel}.`,
+      form.telefone && `Telefone: ${form.telefone}.`,
+      form.email && `E-mail: ${form.email}.`,
+      form.mensagem && `Preciso de: ${form.mensagem}.`,
+      "Gostaria de solicitar um orçamento.",
+    ]
+      .filter(Boolean)
+      .join("\n");
+    window.open(waLink(message), "_blank", "noopener");
+  };
+
+  const inputClass =
+    "mt-2 w-full rounded-md border border-input bg-card px-3 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-ring";
+
+  return (
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Nome *
+          </span>
+          <input
+            type="text"
+            required
+            value={form.nome}
+            onChange={(e) => set("nome")(e.target.value)}
+            placeholder="Seu nome"
+            className={inputClass}
+          />
+        </label>
+        <label className="block">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Telefone / WhatsApp *
+          </span>
+          <input
+            type="tel"
+            required
+            value={form.telefone}
+            onChange={(e) => set("telefone")(e.target.value)}
+            placeholder="(00) 00000-0000"
+            className={inputClass}
+          />
+        </label>
+        <label className="block">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            E-mail
+          </span>
+          <input
+            type="email"
+            value={form.email}
+            onChange={(e) => set("email")(e.target.value)}
+            placeholder="voce@email.com"
+            className={inputClass}
+          />
+        </label>
+        <label className="block">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Tipo de imóvel
+          </span>
+          <select
+            value={form.imovel}
+            onChange={(e) => set("imovel")(e.target.value)}
+            className={inputClass}
+          >
+            <option>Comercial</option>
+            <option>Residencial</option>
+            <option>Industrial</option>
+            <option>Evento / Temporário</option>
+            <option>Outro</option>
+          </select>
+        </label>
+        <label className="block sm:col-span-2">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Mensagem
+          </span>
+          <textarea
+            rows={4}
+            value={form.mensagem}
+            onChange={(e) => set("mensagem")(e.target.value)}
+            placeholder="Descreva o que você precisa resolver..."
+            className={`${inputClass} resize-none`}
+          />
+        </label>
+      </div>
+      <button
+        type="submit"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        <MessageCircle className="size-4" aria-hidden="true" />
+        Enviar e receber orçamento
+      </button>
+      <p className="mt-3 text-center font-mono text-[10px] text-muted-foreground">
+        Ao enviar, sua mensagem abre direto no WhatsApp da Talita. Seus dados não são armazenados.
+      </p>
+    </form>
+  );
+}
+
+function Contato() {
+  return (
+    <section id="contato" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <div className="grid gap-10 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <SectionLabel>(04) Contato</SectionLabel>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+            Solicite seu orçamento
+          </h2>
+          <p className="mt-4 max-w-[40ch] text-pretty text-muted-foreground">
+            Preencha o formulário e receba retorno em até 1 dia útil. Prefere falar agora? Chame no
+            WhatsApp.
+          </p>
+          <div className="mt-8 space-y-3">
+            <a
+              href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold transition-colors hover:border-primary/40"
+            >
+              <MessageCircle className="size-4 text-primary" aria-hidden="true" />
+              WhatsApp · {WHATSAPP_DISPLAY}
+            </a>
+            <p className="flex items-center gap-3 text-sm text-muted-foreground">
+              <Mail className="size-4" aria-hidden="true" />
+              {EMAIL}
+            </p>
+          </div>
+        </div>
+        <div className="lg:col-span-7">
+          <ContactForm />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-border bg-ink text-ink-foreground">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
+        <div className="flex items-center gap-3">
+          <span className="grid size-8 place-items-center rounded-md bg-primary font-mono text-xs font-bold text-primary-foreground">
+            TW
+          </span>
+          <p className="font-mono text-[11px] text-ink-foreground/70">
+            Talita Wanessa · Engenheira Civil e de Segurança do Trabalho
+          </p>
+        </div>
+        <p className="font-mono text-[11px] text-ink-foreground/50">
+          {CREA} · © 2026 · Todos os direitos reservados
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+function WhatsAppFloat() {
+  return (
+    <a
+      href={waLink("Olá, Talita! Vim pelo site e gostaria de mais informações.")}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Conversar no WhatsApp"
+      className="fixed right-5 bottom-5 z-50 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-transform hover:-translate-y-0.5"
+    >
+      <MessageCircle className="size-5" aria-hidden="true" />
+      <span className="hidden sm:inline">WhatsApp</span>
+    </a>
+  );
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background font-body text-foreground antialiased">
+      <Header />
+      <main>
+        <Hero />
+        <Sobre />
+        <Servicos />
+        <Processo />
+        <Contato />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
