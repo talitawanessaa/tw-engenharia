@@ -527,11 +527,11 @@ function Footer() {
         <div className="flex items-center gap-3">
           <img
             src={logoWordWhite.url}
-            alt="Talita Wanessa — Projetos de Segurança contra Incêndios"
+            alt="Talita Wanessa"
             className="h-10 w-auto"
           />
           <p className="font-mono text-[11px] text-ink-foreground/70">
-            Talita Wanessa · Engenheira Civil e de Segurança do Trabalho
+            Engenheira Civil e de Segurança do Trabalho
           </p>
         </div>
         <p className="font-mono text-[11px] text-ink-foreground/50">
