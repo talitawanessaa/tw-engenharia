@@ -315,6 +315,16 @@ const STEPS: { title: string; description: string; options?: string[] }[] = [
       "Você me envia os arquivos DWG do levantamento arquitetônico — são eles a base do projeto de incêndio. Não tem? Sem problema: eu faço o levantamento para você, com foco no que a segurança contra incêndio precisa.",
   },
   {
+    title: "Proposta e cadastro",
+    description:
+      "Envio da minha proposta com o escopo, o prazo e o valor — junto com o formulário de cadastro para formalizar o serviço.",
+  },
+  {
+    title: "Elaboração do que foi solicitado",
+    description:
+      "Com a proposta aprovada, começo a elaboração de tudo o que ficou definido nela — na sequência, você acompanha cada etapa abaixo.",
+  },
+  {
     title: "Vistoria dos sistemas",
     description:
       "Visita ao local para conferir se os sistemas de combate a incêndio estão em ordem.",
@@ -340,7 +350,7 @@ function Processo() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-          Seis passos, do primeiro contato ao documento.
+          Oito passos, do primeiro contato ao documento.
         </h2>
         <div className="relative mt-12">
           <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
