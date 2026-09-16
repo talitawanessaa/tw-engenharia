@@ -312,7 +312,7 @@ const STEPS: { title: string; description: string; options?: string[] }[] = [
   {
     title: "Levantamento arquitetônico",
     description:
-      "Você me envia o levantamento arquitetônico do imóvel — é ele a base do projeto de incêndio. Pode ser em DWG ou PDF. Não tem? Sem problema: eu faço o levantamento para você, com foco no que a segurança contra incêndio precisa.",
+      "Você me envia o levantamento arquitetônico do imóvel — é ele a base do projeto de incêndio. Pode ser em DWG ou PDF. Não tem? Sem problema: eu faço o levantamento para você, para subsidiar apenas o projeto de segurança contra incêndio.",
   },
   {
     title: "Proposta e cadastro",
