@@ -11,8 +11,8 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
-import plantaImg from "@/assets/planta-incendio.jpg";
-import sobreImg from "@/assets/sobre.jpg";
+import talita1 from "@/assets/talita-1.jpg.asset.json";
+import talita2 from "@/assets/talita-2.jpg.asset.json";
 
 // ============================================================
 // DADOS DE CONTATO — PLACEHOLDER. Substituir pelos dados reais.
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Projetos de combate a incêndio e pânico, processos de AVCB e CLCB junto ao Corpo de Bombeiros, laudos técnicos e consultoria de segurança do trabalho.",
+          "Projetos de combate a incêndio, pânico e gás, AVCB por termo de compromisso e definitivo, CLCB, vistoria de sistemas e assessoria junto ao Corpo de Bombeiros.",
       },
       {
         property: "og:title",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Projetos de incêndio e pânico, AVCB e CLCB, laudos técnicos e consultoria de segurança do trabalho.",
+          "Projetos de incêndio, pânico e gás, AVCB e CLCB, vistoria de sistemas e assessoria para AVCB.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -116,9 +116,9 @@ function Hero() {
             Projetos de incêndio e pânico aprovados no Corpo de Bombeiros.
           </h1>
           <p className="mt-6 max-w-[52ch] text-pretty text-base text-muted-foreground sm:text-lg">
-            Elaboração e aprovação de projetos, processos de AVCB e CLCB, laudos técnicos e
-            consultoria de segurança do trabalho — com responsabilidade técnica assinada do início
-            ao fim.
+            Projetos de combate a incêndio, pânico e gás, AVCB por termo de compromisso e
+            definitivo, CLCB, vistoria dos sistemas e assessoria completa — com responsabilidade
+            técnica assinada do início ao fim.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
@@ -139,7 +139,7 @@ function Hero() {
             </a>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] text-muted-foreground">
-            {["Projetos de incêndio e pânico", "AVCB & CLCB", "Laudos técnicos", "Consultoria"].map(
+            {["Incêndio, pânico e gás", "AVCB & CLCB", "Vistoria de sistemas", "Assessoria"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <span className="text-primary">✓</span> {item}
@@ -150,19 +150,13 @@ function Hero() {
         </div>
         <div className="lg:col-span-5">
           <figure className="rounded-2xl border border-border bg-card p-3 shadow-sm">
-            <div className="flex items-center justify-between px-1 pb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              <span>Prancha 01 · Rotas de fuga</span>
-              <span>Escala 1:50</span>
-            </div>
             <img
-              src={plantaImg}
-              alt="Planta baixa de edificação comercial com rotas de fuga destacadas em vermelho"
-              width={1024}
-              height={1024}
+              src={talita2.url}
+              alt="Talita Wanessa, engenheira civil e de segurança do trabalho"
               className="w-full rounded-xl border border-border object-cover"
             />
             <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              Projeto de combate a incêndio e pânico
+              Talita Wanessa · Eng. Civil e de Segurança do Trabalho
             </figcaption>
           </figure>
         </div>
@@ -177,10 +171,8 @@ function Sobre() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <img
-            src={sobreImg}
-            alt="Mesa de trabalho de engenharia com capacete de segurança, laudos e projetos técnicos"
-            width={864}
-            height={1088}
+            src={talita1.url}
+            alt="Talita Wanessa agachada ao lado de notebook, trena e projetos técnicos"
             loading="lazy"
             className="w-full rounded-2xl border border-white/10 object-cover"
           />
@@ -223,13 +215,13 @@ const SERVICES = [
     icon: Flame,
     title: "Projeto de combate a incêndio e pânico",
     description:
-      "Elaboração técnica do projeto conforme as normas do Corpo de Bombeiros: pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
+      "Elaboração técnica conforme as normas do Corpo de Bombeiros, incluindo também o projeto de gás (GLP/GN): pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
   },
   {
     icon: FileCheck2,
-    title: "Processo de AVCB",
+    title: "AVCB · termo de compromisso e definitivo",
     description:
-      "Abertura, protocolo e acompanhamento do processo até a emissão do Alvará de Vistoria do Corpo de Bombeiros — o documento que comprova a regularidade do imóvel.",
+      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros nas duas modalidades: por termo de compromisso, para regularizar mais rápido, e o AVCB definitivo.",
   },
   {
     icon: ClipboardCheck,
@@ -239,15 +231,15 @@ const SERVICES = [
   },
   {
     icon: FileSearch,
-    title: "Laudos técnicos",
+    title: "Vistoria dos sistemas",
     description:
-      "Vistoria e laudos com diagnóstico claro do estado do imóvel e plano de adequação priorizado, assinados com responsabilidade técnica.",
+      "Verificação no local para conferir se os sistemas de segurança contra incêndio estão em ordem e funcionando, com apontamento das adequações necessárias.",
   },
   {
     icon: HardHat,
-    title: "Consultoria de segurança do trabalho",
+    title: "Assessoria para AVCB",
     description:
-      "Assessoria contínua para manter o imóvel e a operação em conformidade: gestão de riscos, orientação normativa e apoio em fiscalizações.",
+      "Acompanhamento do começo ao fim: orientação normativa, organização da documentação e apoio durante a análise e a fiscalização do Corpo de Bombeiros.",
   },
 ];
 
@@ -309,23 +301,25 @@ function Servicos() {
 const STEPS = [
   {
     title: "Contato",
-    description: "Você envia o tipo de imóvel e o que precisa resolver.",
+    description: "Você conta o tipo de imóvel e o que precisa: projeto, AVCB, CLCB ou vistoria.",
   },
   {
-    title: "Visita e análise",
-    description: "Levantamento no local e diagnóstico das adequações necessárias.",
+    title: "Vistoria dos sistemas",
+    description:
+      "Visita ao local para conferir se os sistemas de combate a incêndio e de gás estão em ordem.",
   },
   {
-    title: "Projeto",
-    description: "Elaboração das pranchas e memoriais técnicos conforme a norma.",
+    title: "Projeto de combate a incêndio e gás",
+    description: "Elaboração das pranchas e memoriais técnicos conforme a norma do Corpo de Bombeiros.",
   },
   {
-    title: "Aprovação no Corpo de Bombeiros",
-    description: "Protocolo e acompanhamento do processo até a análise do órgão.",
+    title: "Protocolo e assessoria",
+    description:
+      "Abertura do processo e acompanhamento junto ao Corpo de Bombeiros até a conclusão da análise.",
   },
   {
-    title: "Emissão do AVCB / CLCB",
-    description: "Documento emitido e entregue — seu imóvel em conformidade.",
+    title: "AVCB (termo de compromisso ou definitivo) ou CLCB",
+    description: "Documento emitido e entregue — seu imóvel regularizado.",
   },
 ];
 
