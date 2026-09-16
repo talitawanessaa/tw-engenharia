@@ -139,7 +139,7 @@ function Hero() {
             </a>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] text-muted-foreground">
-            ["Incêndio, pânico e gás", "AVCB & CLCB", "Vistoria de sistemas", "Assessoria"].map(
+            {["Incêndio, pânico e gás", "AVCB & CLCB", "Vistoria de sistemas", "Assessoria"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <span className="text-primary">✓</span> {item}
