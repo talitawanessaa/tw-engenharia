@@ -302,12 +302,33 @@ function Servicos() {
   );
 }
 
-const STEPS: { title: string; description: string; options?: string[] }[] = [
+const STEPS: {
+  title: string;
+  description: string;
+  options?: { sigla: string; texto: string }[];
+}[] = [
   {
     title: "Contato",
     description:
-      "Você me fala o tipo de imóvel e o que precisa. Dá uma olhada nas opções do que costuma ser pedido:",
-    options: ["PPCIP", "AVCB ou CLCB", "Vistoria", "PPCIP, AVCB e Vistoria"],
+      "Você me fala o tipo de imóvel e o que precisa. Dá uma olhada nas solicitações que costumam ser pedidas:",
+    options: [
+      {
+        sigla: "PPCIP",
+        texto: "Projeto de Prevenção e Combate a Incêndio e Pânico",
+      },
+      {
+        sigla: "AVCB ou CLCB",
+        texto: "Alvará ou Certificado de Licenciamento do Corpo de Bombeiros",
+      },
+      {
+        sigla: "Vistoria",
+        texto: "Verificação dos sistemas de segurança contra incêndio",
+      },
+      {
+        sigla: "PPCIP, AVCB e Vistoria",
+        texto: "Tudo junto",
+      },
+    ],
   },
   {
     title: "Levantamento arquitetônico",
@@ -353,16 +374,21 @@ function Processo() {
                     <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
                     {step.options && (
-                      <ul className="mt-3 flex flex-wrap gap-2">
-                        {step.options.map((option) => (
-                          <li
-                            key={option}
-                            className="rounded-full border border-primary/40 bg-primary/5 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.08em] text-primary"
-                          >
-                            {option}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="mt-3 border-t border-border pt-3">
+                        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
+                          Solicitações:
+                        </p>
+                        <ul className="mt-2 space-y-1.5">
+                          {step.options.map((option) => (
+                            <li key={option.sigla} className="text-sm">
+                              <span className="font-semibold text-foreground">
+                                {option.sigla}
+                              </span>
+                              <span className="text-muted-foreground"> — {option.texto}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
                 </li>
