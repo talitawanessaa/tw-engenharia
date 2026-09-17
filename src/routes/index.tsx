@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   FileSearch,
   HardHat,
+  Fuel,
   ArrowRight,
   Phone,
   Mail,
@@ -368,23 +369,6 @@ function Processo() {
                   >
                     <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
-                    {step.options && (
-                      <div className="mt-3 border-t border-border pt-3">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-                          Solicitações:
-                        </p>
-                        <ul className="mt-2 space-y-1.5">
-                          {step.options.map((option) => (
-                            <li key={option.sigla} className="text-sm">
-                              <span className="font-semibold text-foreground">
-                                {option.sigla}
-                              </span>
-                              <span className="text-muted-foreground"> — {option.texto}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                   </div>
                 </li>
               );
