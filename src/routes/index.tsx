@@ -121,8 +121,8 @@ function Hero() {
             {CREA} · Registro ativo
           </span>
           <h1 className="mt-6 max-w-[24ch] font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-            Projetos que conectam segurança{" "}
-            <span className="text-primary">e conformidade</span>
+            Projetos que conectam{" "}
+            <span className="text-primary">segurança e conformidade</span>
           </h1>
           <p className="mt-6 max-w-[52ch] text-pretty text-base text-muted-foreground sm:text-lg">
             Projetos de Combate a Incêndio e Pânico, AVCB, DLCB, Vistoria dos Sistemas e
