@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   FileSearch,
   HardHat,
+  Fuel,
   ArrowRight,
   Phone,
   Mail,
@@ -90,6 +91,9 @@ function Header() {
           </a>
           <a href="#processo" className="transition-colors hover:text-foreground">
             Processo
+          </a>
+          <a href="#duvidas" className="transition-colors hover:text-foreground">
+            Dúvidas
           </a>
           <a href="#contato" className="transition-colors hover:text-foreground">
             Contato
@@ -217,33 +221,39 @@ function Sobre() {
 const SERVICES = [
   {
     icon: Flame,
-    title: "Projeto de combate a incêndio e pânico",
+    title: "Projeto de Combate a Incêndio e Pânico",
     description:
       "Elaboração técnica conforme as normas do Corpo de Bombeiros: pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
   },
   {
     icon: FileCheck2,
-    title: "AVCB · termo de compromisso e definitivo",
+    title: "AVCB",
     description:
-      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros nas duas modalidades: por termo de compromisso, para regularizar mais rápido, e o AVCB definitivo.",
+      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros.",
   },
   {
     icon: ClipboardCheck,
-    title: "CLCB",
+    title: "DLCB",
     description:
-      "Certificado de Licenciamento do Corpo de Bombeiros para imóveis e eventos, com toda a documentação técnica preparada e protocolada.",
+      "Condução do processo de Dispensa de licença do Corpo de Bombeiros.",
   },
   {
     icon: FileSearch,
-    title: "Vistoria dos sistemas",
+    title: "Vistoria dos Sistemas de Incêndio",
     description:
       "Verificação no local para conferir se os sistemas de segurança contra incêndio estão em ordem e funcionando, com apontamento das adequações necessárias.",
   },
   {
     icon: HardHat,
-    title: "Assessoria para AVCB",
+    title: "Assessoria",
     description:
       "Acompanhamento do começo ao fim: orientação normativa, organização da documentação e apoio durante a análise e a fiscalização do Corpo de Bombeiros.",
+  },
+  {
+    icon: Fuel,
+    title: "Projeto de Gás (GLP ou GN)",
+    description:
+      "Dimensionamento da rede de gás GLP ou GN conforme normas de segurança e requisitos técnicos.",
   },
 ];
 
@@ -305,40 +315,29 @@ function Servicos() {
 const STEPS: {
   title: string;
   description: string;
-  options?: { sigla: string; texto: string }[];
 }[] = [
   {
-    title: "Contato",
-    description:
-      "Você me fala o tipo de imóvel e o que precisa. Dá uma olhada nas solicitações que costumam ser pedidas:",
-    options: [
-      {
-        sigla: "PPCIP",
-        texto: "Projeto de Prevenção e Combate a Incêndio e Pânico",
-      },
-      {
-        sigla: "AVCB ou CLCB",
-        texto: "Alvará ou Certificado de Licenciamento do Corpo de Bombeiros",
-      },
-      {
-        sigla: "Vistoria",
-        texto: "Verificação dos sistemas de segurança contra incêndio",
-      },
-      {
-        sigla: "PPCIP, AVCB e Vistoria",
-        texto: "Tudo junto",
-      },
-    ],
+    title: "Contato inicial",
+    description: "Você nos apresenta a sua necessidade.",
   },
   {
-    title: "Levantamento arquitetônico",
+    title: "Proposta Comercial",
     description:
-      "Você me envia o levantamento arquitetônico do imóvel — é ele a base do projeto de incêndio. Pode ser em DWG ou PDF. Não tem? Sem problema: eu faço o levantamento para você, para subsidiar apenas o projeto de segurança contra incêndio.",
+      "Apresentamos o escopo detalhado, os prazos de entrega e o investimento de forma clara e transparente.",
   },
   {
-    title: "Proposta e cadastro",
+    title: "Reunião de Validação",
+    description: "Realizo uma reunião presencial ou totalmente online.",
+  },
+  {
+    title: "Entrega Final",
     description:
-      "Envio da minha proposta com o escopo, o prazo e o valor — junto com o formulário de cadastro para formalizar o serviço.",
+      "Você recebe toda a documentação completa, pranchas detalhadas, memoriais e arquivos prontos para a execução na obra.",
+  },
+  {
+    title: "Pós-Venda e Suporte",
+    description:
+      "Meu compromisso não acaba na entrega. Dou suporte consultivo para tirar dúvidas da equipe de execução até a obra sair do papel.",
   },
 ];
 
@@ -348,7 +347,7 @@ function Processo() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-          Três passos, do primeiro contato à proposta.
+          Como funciona
         </h2>
         <div className="relative mt-12">
           <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
@@ -373,29 +372,96 @@ function Processo() {
                   >
                     <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
-                    {step.options && (
-                      <div className="mt-3 border-t border-border pt-3">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-                          Solicitações:
-                        </p>
-                        <ul className="mt-2 space-y-1.5">
-                          {step.options.map((option) => (
-                            <li key={option.sigla} className="text-sm">
-                              <span className="font-semibold text-foreground">
-                                {option.sigla}
-                              </span>
-                              <span className="text-muted-foreground"> — {option.texto}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                   </div>
                 </li>
               );
             })}
           </ol>
         </div>
+      </div>
+    </section>
+  );
+}
+
+const FAQS = [
+  {
+    question: "Os projetos têm responsabilidade técnica?",
+    answer: `Sim, pela responsável técnica (${CREA}) com sua respectiva ART.`,
+  },
+  {
+    question: "Quanto tempo leva para entrega do projeto?",
+    answer:
+      "O prazo varia conforme o porte e a complexidade do empreendimento e é definido na proposta comercial. As condições e os prazos acordados são formalizados em contrato, garantindo clareza e compromisso com a entrega.",
+  },
+  {
+    question: "O que preciso fornecer para iniciar o projeto?",
+    answer:
+      "São solicitados os documentos e informações necessários sobre o empreendimento, como plantas existentes, dados da edificação e demais documentos conforme o serviço contratado.",
+  },
+  {
+    question: "Você cuida da aprovação junto ao CBMPE?",
+    answer:
+      "Sim. Quando a aprovação estiver incluída no serviço contratado, acompanho o processo junto ao CBMPE até a conclusão da etapa prevista na proposta.",
+  },
+  {
+    question: "Já tenho um projeto antigo. Preciso fazer outro?",
+    answer:
+      "Não necessariamente. Primeiro analiso o projeto existente e as condições atuais da edificação para verificar se é possível utilizá-lo, atualizá-lo ou se será necessária uma nova elaboração.",
+  },
+  {
+    question: "Depois da aprovação do projeto, o que preciso fazer?",
+    answer:
+      "Após a aprovação, devem ser executadas as medidas de segurança previstas no projeto. Conforme o serviço contratado, também posso realizar a assessoria nas etapas de regularização e obtenção do AVCB.",
+  },
+];
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <section id="duvidas" className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+      <SectionLabel>(04) Dúvidas Frequentes</SectionLabel>
+      <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+        Perguntas frequentes, respondidas com clareza.
+      </h2>
+      <div className="mt-10 space-y-3">
+        {FAQS.map((faq, i) => {
+          const isOpen = open === i;
+          return (
+            <div
+              key={faq.question}
+              className={`rounded-xl border bg-card transition-colors ${
+                isOpen ? "border-primary/40" : "border-border"
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => setOpen(isOpen ? null : i)}
+                aria-expanded={isOpen}
+                className="flex w-full items-center justify-between gap-4 p-5 text-left"
+              >
+                <span className="font-display text-sm font-bold tracking-tight sm:text-base">
+                  {faq.question}
+                </span>
+                <span
+                  className={`grid size-7 shrink-0 place-items-center rounded-full border font-mono text-sm transition-colors ${
+                    isOpen
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border text-primary"
+                  }`}
+                  aria-hidden="true"
+                >
+                  {isOpen ? "−" : "+"}
+                </span>
+              </button>
+              {isOpen && (
+                <p className="border-t border-border px-5 pb-5 pt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
+                  {faq.answer}
+                </p>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -520,7 +586,7 @@ function Contato() {
     <section id="contato" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <SectionLabel>(04) Contato</SectionLabel>
+          <SectionLabel>(05) Contato</SectionLabel>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
             Solicite seu orçamento
           </h2>
@@ -598,6 +664,7 @@ function Index() {
         <Sobre />
         <Servicos />
         <Processo />
+        <Faq />
         <Contato />
       </main>
       <Footer />
