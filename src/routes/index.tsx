@@ -120,13 +120,13 @@ function Hero() {
             <span className="size-1.5 rounded-full bg-primary" />
             {CREA} · Registro ativo
           </span>
-          <h1 className="mt-6 max-w-[24ch] font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl uppercase">
-            Projeto combate incêndio e pânico no Corpo de Bombeiros.
+          <h1 className="mt-6 max-w-[24ch] font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            Projetos que conectam segurança{" "}
+            <span className="text-primary">e conformidade</span>
           </h1>
           <p className="mt-6 max-w-[52ch] text-pretty text-base text-muted-foreground sm:text-lg">
-            Projetos de combate a incêndio e pânico, AVCB por termo de compromisso e
-            definitivo, CLCB, vistoria dos sistemas e assessoria completa — com responsabilidade
-            técnica assinada do início ao fim.
+            Projetos de Combate a Incêndio e Pânico, AVCB, DLCB, Vistoria dos Sistemas e
+            Assessoria com responsabilidade técnica assinada do início ao fim.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
