@@ -92,6 +92,9 @@ function Header() {
           <a href="#processo" className="transition-colors hover:text-foreground">
             Processo
           </a>
+          <a href="#duvidas" className="transition-colors hover:text-foreground">
+            Dúvidas
+          </a>
           <a href="#contato" className="transition-colors hover:text-foreground">
             Contato
           </a>
@@ -661,6 +664,7 @@ function Index() {
         <Sobre />
         <Servicos />
         <Processo />
+        <Faq />
         <Contato />
       </main>
       <Footer />
