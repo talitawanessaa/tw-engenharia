@@ -3,7 +3,6 @@ import { useState, type FormEvent } from "react";
 import {
   Flame,
   FileCheck2,
-  ClipboardCheck,
   FileSearch,
   HardHat,
   Fuel,
@@ -231,15 +230,9 @@ const SERVICES = [
   },
   {
     icon: FileCheck2,
-    title: "AVCB",
+    title: "AVCB/DLCB",
     description:
-      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "DLCB",
-    description:
-      "Condução do processo de Dispensa de licença do Corpo de Bombeiros.",
+      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros. Condução do processo de Dispensa de licença do Corpo de Bombeiros.",
   },
   {
     icon: FileSearch,
