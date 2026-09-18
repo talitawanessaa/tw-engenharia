@@ -11,6 +11,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import talita1 from "@/assets/talita-1.jpg.asset.json";
 import plantaHero from "@/assets/planta-hero.png.asset.json";
 import perfil from "@/assets/perfil.png.asset.json";
 import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
