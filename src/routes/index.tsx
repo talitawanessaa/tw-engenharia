@@ -156,7 +156,7 @@ function Hero() {
             )}
           </ul>
         </div>
-        <div className="lg:col-span-5 lg:h-full">
+        <div className="lg:col-span-5 lg:self-stretch">
           <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-3 shadow-sm">
             <img
               src={plantaHero.url}
