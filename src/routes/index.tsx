@@ -159,12 +159,12 @@ function Hero() {
         <div className="lg:col-span-5">
           <figure className="rounded-2xl border border-border bg-card p-3 shadow-sm">
             <img
-              src={perfil.url}
-              alt="Talita Wanessa, engenheira civil e de segurança do trabalho"
-              className="w-full rounded-xl border border-border object-cover"
+              src={plantaHero.url}
+              alt="Prancha de projeto de segurança contra incêndio e pânico elaborada por Talita Wanessa"
+              className="w-full rounded-xl border border-border object-contain"
             />
             <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              Talita Wanessa · Eng. Civil e de Segurança do Trabalho
+              Projeto de Segurança Contra Incêndio e Pânico · Prancha de planta baixa
             </figcaption>
           </figure>
         </div>
