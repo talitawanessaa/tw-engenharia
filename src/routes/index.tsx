@@ -229,6 +229,12 @@ const SERVICES = [
       "Elaboração técnica conforme as normas do Corpo de Bombeiros: pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
   },
   {
+    icon: Fuel,
+    title: "Projeto de Gás (GLP ou GN)",
+    description:
+      "Dimensionamento da rede de gás GLP ou GN conforme normas de segurança e requisitos técnicos.",
+  },
+  {
     icon: FileCheck2,
     title: "AVCB/DLCB",
     description:
@@ -245,12 +251,6 @@ const SERVICES = [
     title: "Assessoria",
     description:
       "Acompanhamento do começo ao fim: orientação normativa, organização da documentação e apoio durante a análise e a fiscalização do Corpo de Bombeiros.",
-  },
-  {
-    icon: Fuel,
-    title: "Projeto de Gás (GLP ou GN)",
-    description:
-      "Dimensionamento da rede de gás GLP ou GN conforme normas de segurança e requisitos técnicos.",
   },
 ];
 
