@@ -12,7 +12,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import talita1 from "@/assets/talita-1.jpg.asset.json";
-import plantaHero from "@/assets/planta-hero.png.asset.json";
+import plantaHero from "@/assets/planta-hero-2.png.asset.json";
 import perfil from "@/assets/perfil.png.asset.json";
 import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
 import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
@@ -156,12 +156,12 @@ function Hero() {
             )}
           </ul>
         </div>
-        <div className="lg:col-span-5">
-          <figure className="rounded-2xl border border-border bg-card p-3 shadow-sm">
+        <div className="lg:col-span-5 lg:self-stretch">
+          <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-3 shadow-sm">
             <img
               src={plantaHero.url}
               alt="Prancha de projeto de segurança contra incêndio e pânico elaborada por Talita Wanessa"
-              className="w-full rounded-xl border border-border object-contain"
+              className="w-full flex-1 min-h-0 rounded-xl border border-border object-contain"
             />
             <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
               Projeto de Segurança Contra Incêndio e Pânico · Prancha de planta baixa
