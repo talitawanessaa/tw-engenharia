@@ -190,18 +190,22 @@ function Sobre() {
             (01) Sobre
           </p>
           <h2 className="mt-4 max-w-[26ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-            Engenharia de segurança com responsabilidade técnica.
+            Engenharia que transforma segurança em prevenção.
           </h2>
           <p className="mt-5 max-w-[56ch] text-pretty leading-relaxed text-ink-foreground/75">
-            Sou Talita Wanessa, engenheira civil e de segurança do trabalho. Atuo na elaboração e
-            aprovação de projetos de combate a incêndio e pânico, conduzindo todo o processo de
-            AVCB e CLCB junto ao Corpo de Bombeiros — da análise do imóvel à emissão do documento.
+            Sou Talita Wanessa, engenheira civil e de segurança do trabalho, e atuo com projetos e
+            regularização de edificações na área de segurança contra incêndio.
+          </p>
+          <p className="mt-4 max-w-[56ch] text-pretty leading-relaxed text-ink-foreground/75">
+            Desenvolvo projetos de prevenção e combate a incêndio e pânico, adequações e processos
+            de regularização junto ao Corpo de Bombeiros, buscando soluções técnicas, seguras e
+            adequadas às necessidades de cada empreendimento.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
-              { label: "Registro", value: "CREA ativo", detail: "Responsabilidade técnica em cada projeto" },
-              { label: "Formação", value: "Formação dupla", detail: "Engenharia civil e segurança do trabalho" },
-              { label: "Foco", value: "Aprovação real", detail: "Do protocolo à emissão do AVCB" },
+              { label: "Registro", value: "CREA ativo", detail: "Responsabilidade técnica nos serviços realizados" },
+              { label: "Formação", value: "Engenharia Civil + Segurança do Trabalho", detail: "Atuação integrada entre projeto, segurança e conformidade" },
+              { label: "Foco", value: "Segurança contra incêndio", detail: "Projetos e regularização de edificações" },
             ].map((item) => (
               <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 p-4">
                 <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/50">
