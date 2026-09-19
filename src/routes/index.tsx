@@ -454,6 +454,7 @@ function Faq() {
           );
         })}
       </div>
+      </div>
     </section>
   );
 }
