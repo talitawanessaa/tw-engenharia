@@ -350,32 +350,19 @@ function Processo() {
         <div className="relative mt-12">
           <div className="absolute top-2 bottom-2 left-[19px] w-px bg-white/10 sm:block" />
           <ol className="space-y-5">
-            {STEPS.map((step, i) => {
-              const last = i === STEPS.length - 1;
-              return (
-                <li key={step.title} className="relative flex gap-5">
-                  <span
-                    className={`z-10 grid size-10 shrink-0 place-items-center rounded-full border font-mono text-xs ${
-                      last
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-white/20 bg-white/10 text-primary"
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div
-                    className={`flex-1 rounded-xl border p-5 ${
-                      last
-                        ? "border-primary/40 bg-primary/10"
-                        : "border-white/10 bg-white/5"
-                    }`}
-                  >
-                    <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
-                    <p className="mt-1 text-sm text-ink-foreground/60">{step.description}</p>
-                  </div>
-                </li>
-              );
-            })}
+            {STEPS.map((step, i) => (
+              <li key={step.title} className="relative flex gap-5">
+                <span className="z-10 grid size-10 shrink-0 place-items-center rounded-full border border-white/15 bg-ink font-mono text-xs text-ink-foreground/60">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex-1 rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="font-display font-bold tracking-tight text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                </div>
+              </li>
+            ))}
           </ol>
         </div>
       </div>
