@@ -410,6 +410,7 @@ function Faq() {
       id="duvidas"
       className="grid-paper-dark bg-ink text-ink-foreground"
     >
+      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
       <SectionLabel>(05) Dúvidas Frequentes</SectionLabel>
       <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
         Perguntas frequentes, respondidas com clareza.
