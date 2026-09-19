@@ -92,11 +92,11 @@ function Header() {
           <a href="#processo" className="transition-colors hover:text-foreground">
             Processo
           </a>
-          <a href="#duvidas" className="transition-colors hover:text-foreground">
-            Dúvidas
-          </a>
           <a href="#contato" className="transition-colors hover:text-foreground">
             Contato
+          </a>
+          <a href="#duvidas" className="transition-colors hover:text-foreground">
+            Dúvidas
           </a>
         </nav>
         <a
@@ -420,7 +420,7 @@ function Faq() {
 
   return (
     <section id="duvidas" className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-      <SectionLabel>(04) Dúvidas Frequentes</SectionLabel>
+      <SectionLabel>(05) Dúvidas Frequentes</SectionLabel>
       <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
         Perguntas frequentes, respondidas com clareza.
       </h2>
@@ -587,7 +587,7 @@ function Contato() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <SectionLabel>(05) Contato</SectionLabel>
+          <SectionLabel>(04) Contato</SectionLabel>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
             Solicite seu orçamento
           </h2>
@@ -667,8 +667,8 @@ function Index() {
         <Sobre />
         <Servicos />
         <Processo />
-        <Faq />
         <Contato />
+        <Faq />
       </main>
       <Footer />
       <WhatsAppFloat />
