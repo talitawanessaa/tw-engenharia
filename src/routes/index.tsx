@@ -605,7 +605,7 @@ function Contato() {
               <MessageCircle className="size-4 text-primary" aria-hidden="true" />
               WhatsApp · {WHATSAPP_DISPLAY}
             </a>
-            <p className="flex items-center gap-3 text-sm text-muted-foreground">
+            <p className="flex items-center gap-3 text-sm text-ink-foreground/70">
               <Mail className="size-4" aria-hidden="true" />
               {EMAIL}
             </p>
