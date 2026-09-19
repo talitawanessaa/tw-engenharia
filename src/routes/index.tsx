@@ -615,9 +615,11 @@ function Contato() {
           <ContactForm />
         </div>
       </div>
+      </div>
     </section>
   );
 }
+
 
 function Footer() {
   return (
