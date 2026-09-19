@@ -406,7 +406,10 @@ function Faq() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="duvidas" className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+    <section
+      id="duvidas"
+      className="grid-paper-dark bg-ink text-ink-foreground"
+    >
       <SectionLabel>(05) Dúvidas Frequentes</SectionLabel>
       <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
         Perguntas frequentes, respondidas com clareza.
@@ -417,7 +420,7 @@ function Faq() {
           return (
             <div
               key={faq.question}
-              className={`rounded-xl border bg-card transition-colors ${
+              className={`rounded-xl border bg-card text-foreground transition-colors ${
                 isOpen ? "border-primary/40" : "border-border"
               }`}
             >
@@ -570,7 +573,7 @@ function ContactForm() {
 
 function Contato() {
   return (
-    <section id="contato" className="grid-paper-dark bg-ink text-ink-foreground">
+    <section id="contato" className="bg-background">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
@@ -578,7 +581,7 @@ function Contato() {
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
             Solicite seu orçamento
           </h2>
-          <p className="mt-4 max-w-[40ch] text-pretty text-ink-foreground/75">
+          <p className="mt-4 max-w-[40ch] text-pretty text-muted-foreground">
             Preencha o formulário e receba retorno em até 1 dia útil. Prefere falar agora? Chame no
             WhatsApp.
           </p>
@@ -587,12 +590,12 @@ function Contato() {
               href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold transition-colors hover:border-primary/40"
+              className="inline-flex items-center gap-3 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold transition-colors hover:border-primary/40"
             >
               <MessageCircle className="size-4 text-primary" aria-hidden="true" />
               WhatsApp · {WHATSAPP_DISPLAY}
             </a>
-            <p className="flex items-center gap-3 text-sm text-ink-foreground/70">
+            <p className="flex items-center gap-3 text-sm text-muted-foreground">
               <Mail className="size-4" aria-hidden="true" />
               {EMAIL}
             </p>
