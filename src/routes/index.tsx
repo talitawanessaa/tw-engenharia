@@ -156,12 +156,12 @@ function Hero() {
             )}
           </ul>
         </div>
-        <div className="lg:col-span-5 lg:self-stretch">
-          <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-3 shadow-sm">
+        <div className="lg:col-span-5 lg:self-center">
+          <figure className="flex flex-col rounded-2xl border border-border bg-card p-3 shadow-sm">
             <img
               src={plantaHero.url}
               alt="Prancha de projeto de segurança contra incêndio e pânico elaborada por Talita Wanessa"
-              className="w-full flex-1 min-h-0 rounded-xl border border-border object-contain"
+              className="w-full rounded-xl border border-border"
             />
             <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
               Projeto de Segurança Contra Incêndio e Pânico · Prancha de planta baixa
@@ -341,14 +341,14 @@ const STEPS: {
 
 function Processo() {
   return (
-    <section id="processo" className="border-y border-border bg-secondary/40">
+    <section id="processo" className="grid-paper-dark bg-ink text-ink-foreground">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
           Como funciona
         </h2>
         <div className="relative mt-12">
-          <div className="absolute top-2 bottom-2 left-[19px] w-px bg-border sm:block" />
+          <div className="absolute top-2 bottom-2 left-[19px] w-px bg-white/10 sm:block" />
           <ol className="space-y-5">
             {STEPS.map((step, i) => {
               const last = i === STEPS.length - 1;
@@ -358,18 +358,20 @@ function Processo() {
                     className={`z-10 grid size-10 shrink-0 place-items-center rounded-full border font-mono text-xs ${
                       last
                         ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-background text-primary"
+                        : "border-white/20 bg-white/10 text-primary"
                     }`}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div
                     className={`flex-1 rounded-xl border p-5 ${
-                      last ? "border-primary/40 bg-primary/5" : "border-border bg-card"
+                      last
+                        ? "border-primary/40 bg-primary/10"
+                        : "border-white/10 bg-white/5"
                     }`}
                   >
                     <h3 className="font-display font-bold tracking-tight">{step.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                    <p className="mt-1 text-sm text-ink-foreground/60">{step.description}</p>
                   </div>
                 </li>
               );
@@ -581,14 +583,15 @@ function ContactForm() {
 
 function Contato() {
   return (
-    <section id="contato" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <section id="contato" className="grid-paper-dark bg-ink text-ink-foreground">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <SectionLabel>(05) Contato</SectionLabel>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
             Solicite seu orçamento
           </h2>
-          <p className="mt-4 max-w-[40ch] text-pretty text-muted-foreground">
+          <p className="mt-4 max-w-[40ch] text-pretty text-ink-foreground/75">
             Preencha o formulário e receba retorno em até 1 dia útil. Prefere falar agora? Chame no
             WhatsApp.
           </p>
@@ -597,12 +600,12 @@ function Contato() {
               href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold transition-colors hover:border-primary/40"
+              className="inline-flex items-center gap-3 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold transition-colors hover:border-primary/40"
             >
               <MessageCircle className="size-4 text-primary" aria-hidden="true" />
               WhatsApp · {WHATSAPP_DISPLAY}
             </a>
-            <p className="flex items-center gap-3 text-sm text-muted-foreground">
+            <p className="flex items-center gap-3 text-sm text-ink-foreground/70">
               <Mail className="size-4" aria-hidden="true" />
               {EMAIL}
             </p>
@@ -612,9 +615,11 @@ function Contato() {
           <ContactForm />
         </div>
       </div>
+      </div>
     </section>
   );
 }
+
 
 function Footer() {
   return (
