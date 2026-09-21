@@ -245,12 +245,6 @@ const SERVICES = [
     description:
       "Verificação no local para conferir se os sistemas de segurança contra incêndio estão em ordem e funcionando, com apontamento das adequações necessárias.",
   },
-  {
-    icon: HardHat,
-    title: "Assessoria",
-    description:
-      "Acompanhamento do começo ao fim: orientação normativa, organização da documentação e apoio durante a análise e a fiscalização do Corpo de Bombeiros.",
-  },
 ];
 
 function Servicos() {
