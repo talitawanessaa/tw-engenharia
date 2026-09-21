@@ -114,15 +114,15 @@ function Hero() {
   return (
     <section className="grid-paper relative overflow-hidden border-b border-border">
       <div className="pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-primary/10 blur-3xl" />
-      {/* Prancha como marca d'água de fundo */}
+      {/* Prancha como marca d'água cobrindo todo o fundo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] select-none lg:block"
+        className="pointer-events-none absolute inset-0 select-none"
       >
         <img
           src={plantaHero.url}
           alt=""
-          className="h-full w-full object-cover opacity-[0.08] [mask-image:linear-gradient(to_left,black_30%,transparent_95%)]"
+          className="h-full w-full object-cover opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]"
         />
       </div>
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 sm:py-24">
