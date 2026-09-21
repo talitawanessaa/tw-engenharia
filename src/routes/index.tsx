@@ -9,6 +9,7 @@ import {
   Phone,
   Mail,
   MessageCircle,
+  ChevronDown,
 } from "lucide-react";
 import talita1 from "@/assets/talita-1.jpg.asset.json";
 import plantaHero from "@/assets/planta-hero-2.png.asset.json";
@@ -94,7 +95,9 @@ function Header() {
           <a href="#contato" className="transition-colors hover:text-foreground">
             Contato
           </a>
-
+          <a href="#duvidas" className="transition-colors hover:text-foreground">
+            Dúvidas
+          </a>
         </nav>
         <a
           href="#contato"
@@ -516,6 +519,85 @@ function Contato() {
   );
 }
 
+const FAQS = [
+  {
+    question: "Os projetos têm responsabilidade técnica?",
+    answer:
+      "Sim, pela responsável técnica (CREA 1822120098/PE) com sua respectiva ART.",
+  },
+  {
+    question: "Quanto tempo leva para entrega do projeto?",
+    answer:
+      "O prazo varia conforme o porte e a complexidade do empreendimento e é definido na proposta comercial. As condições e os prazos acordados são formalizados em contrato, garantindo clareza e compromisso com a entrega.",
+  },
+  {
+    question: "O que preciso fornecer para iniciar o projeto?",
+    answer:
+      "São solicitados os documentos e informações necessários sobre o empreendimento, como plantas existentes, dados da edificação e demais documentos conforme o serviço contratado.",
+  },
+  {
+    question: "Você cuida da aprovação junto ao CBMPE?",
+    answer:
+      "Sim. Quando a aprovação estiver incluída no serviço contratado, acompanho o processo junto ao CBMPE até a conclusão da etapa prevista na proposta.",
+  },
+  {
+    question: "Já tenho um projeto antigo. Preciso fazer outro?",
+    answer:
+      "Não necessariamente. Primeiro analiso o projeto existente e as condições atuais da edificação para verificar se é possível utilizá-lo, atualizá-lo ou se será necessária uma nova elaboração.",
+  },
+  {
+    question: "Depois da aprovação do projeto, o que preciso fazer?",
+    answer:
+      "Após a aprovação, devem ser executadas as medidas de segurança previstas no projeto. Conforme o serviço contratado, também posso realizar a assessoria nas etapas de regularização e obtenção do AVCB.",
+  },
+];
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="rounded-xl border border-border bg-card shadow-sm">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+      >
+        <span className="font-display font-bold tracking-tight text-foreground">
+          {question}
+        </span>
+        <ChevronDown
+          aria-hidden="true"
+          className={`size-4 shrink-0 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      {open && (
+        <p className="border-t border-border px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+          {answer}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function Duvidas() {
+  return (
+    <section id="duvidas" className="grid-paper-dark bg-ink text-ink-foreground">
+      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
+          (05) Dúvidas Frequentes
+        </p>
+        <h2 className="mt-4 max-w-[26ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+          Perguntas que sempre aparecem.
+        </h2>
+        <div className="mt-10 space-y-3">
+          {FAQS.map((faq) => (
+            <FaqItem key={faq.question} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function Footer() {
   return (
@@ -564,6 +646,7 @@ function Index() {
         <Servicos />
         <Processo />
         <Contato />
+        <Duvidas />
       </main>
       <Footer />
       <WhatsAppFloat />
