@@ -95,9 +95,7 @@ function Header() {
           <a href="#contato" className="transition-colors hover:text-foreground">
             Contato
           </a>
-          <a href="#duvidas" className="transition-colors hover:text-foreground">
-            Dúvidas
-          </a>
+
         </nav>
         <a
           href="#contato"
@@ -225,7 +223,7 @@ function Sobre() {
 const SERVICES = [
   {
     icon: Flame,
-    title: "Projeto de Combate a Incêndio e Pânico",
+    title: "Projeto de Prevenção e Combate a Incêndio e Pânico (PPCIP)",
     description:
       "Elaboração técnica conforme as normas do Corpo de Bombeiros: pranchas, memoriais descritivos, rotas de fuga, sinalização e dimensionamento dos sistemas.",
   },
@@ -239,11 +237,11 @@ const SERVICES = [
     icon: FileCheck2,
     title: "AVCB/DLCB",
     description:
-      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros. Condução do processo de Dispensa de licença do Corpo de Bombeiros.",
+      "Condução do processo do Alvará de Vistoria do Corpo de Bombeiros. Condução do processo de Dispensa de licença do Corpo de Bombeiros. Acompanhamento do começo ao fim: orientação normativa, organização da documentação e apoio durante a análise e a fiscalização do Corpo de Bombeiros.",
   },
   {
     icon: FileSearch,
-    title: "Vistoria dos Sistemas de Incêndio",
+    title: "Vistoria Técnica",
     description:
       "Verificação no local para conferir se os sistemas de segurança contra incêndio estão em ordem e funcionando, com apontamento das adequações necessárias.",
   },
@@ -352,7 +350,7 @@ function Processo() {
           <ol className="space-y-5">
             {STEPS.map((step, i) => (
               <li key={step.title} className="relative flex gap-5">
-                <span className="z-10 grid size-10 shrink-0 place-items-center rounded-full border border-white/15 bg-ink font-mono text-xs text-ink-foreground/60">
+                <span className="z-10 grid size-10 shrink-0 place-items-center rounded-full border border-border bg-card font-mono text-xs text-foreground/60">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1 rounded-xl border border-border bg-card p-5 shadow-sm">
@@ -371,62 +369,6 @@ function Processo() {
 }
 
 
-function Faq() {
-  const [open, setOpen] = useState<number | null>(null);
-
-  return (
-    <section
-      id="duvidas"
-      className="grid-paper-dark bg-ink text-ink-foreground"
-    >
-      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-      <SectionLabel>(05) Dúvidas Frequentes</SectionLabel>
-      <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-        Perguntas frequentes, respondidas com clareza.
-      </h2>
-      <div className="mt-10 space-y-3">
-        {FAQS.map((faq, i) => {
-          const isOpen = open === i;
-          return (
-            <div
-              key={faq.question}
-              className={`rounded-xl border bg-card text-foreground transition-colors ${
-                isOpen ? "border-primary/40" : "border-border"
-              }`}
-            >
-              <button
-                type="button"
-                onClick={() => setOpen(isOpen ? null : i)}
-                aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 p-5 text-left"
-              >
-                <span className="font-display text-sm font-bold tracking-tight sm:text-base">
-                  {faq.question}
-                </span>
-                <span
-                  className={`grid size-7 shrink-0 place-items-center rounded-full border font-mono text-sm transition-colors ${
-                    isOpen
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border text-primary"
-                  }`}
-                  aria-hidden="true"
-                >
-                  {isOpen ? "−" : "+"}
-                </span>
-              </button>
-              {isOpen && (
-                <p className="border-t border-border px-5 pb-5 pt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
-                  {faq.answer}
-                </p>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      </div>
-    </section>
-  );
-}
 
 function ContactForm() {
   const [form, setForm] = useState({
