@@ -4,7 +4,6 @@ import {
   Flame,
   FileCheck2,
   FileSearch,
-  HardHat,
   Fuel,
   ArrowRight,
   Phone,
