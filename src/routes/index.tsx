@@ -167,18 +167,6 @@ function Hero() {
             )}
           </ul>
         </div>
-        <div className="lg:col-span-5 lg:self-center">
-          <figure className="flex flex-col rounded-2xl border border-border bg-card p-3 shadow-sm">
-            <img
-              src={plantaHero.url}
-              alt="Prancha de projeto de segurança contra incêndio e pânico elaborada por Talita Wanessa"
-              className="w-full rounded-xl border border-border"
-            />
-            <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              Projeto de Segurança Contra Incêndio e Pânico · Prancha de planta baixa
-            </figcaption>
-          </figure>
-        </div>
       </div>
     </section>
   );
