@@ -114,8 +114,19 @@ function Hero() {
   return (
     <section className="grid-paper relative overflow-hidden border-b border-border">
       <div className="pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-primary/10 blur-3xl" />
+      {/* Prancha como marca d'água de fundo */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] select-none lg:block"
+      >
+        <img
+          src={plantaHero.url}
+          alt=""
+          className="h-full w-full object-cover opacity-[0.08] [mask-image:linear-gradient(to_left,black_30%,transparent_95%)]"
+        />
+      </div>
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 sm:py-24">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-9">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
             <span className="size-1.5 rounded-full bg-primary" />
             {CREA} · Registro ativo
@@ -155,18 +166,6 @@ function Hero() {
               ),
             )}
           </ul>
-        </div>
-        <div className="lg:col-span-5 lg:self-center">
-          <figure className="flex flex-col rounded-2xl border border-border bg-card p-3 shadow-sm">
-            <img
-              src={plantaHero.url}
-              alt="Prancha de projeto de segurança contra incêndio e pânico elaborada por Talita Wanessa"
-              className="w-full rounded-xl border border-border"
-            />
-            <figcaption className="px-1 pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              Projeto de Segurança Contra Incêndio e Pânico · Prancha de planta baixa
-            </figcaption>
-          </figure>
         </div>
       </div>
     </section>
