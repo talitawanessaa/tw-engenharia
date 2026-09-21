@@ -628,7 +628,7 @@ function Footer() {
           </p>
         </div>
         <p className="font-mono text-[11px] text-ink-foreground/50">
-          {CREA} · © 2026 · Todos os direitos reservados
+          {CREA} · CNPJ 64.476.545/0001-51 · © 2026 · Todos os direitos reservados
         </p>
       </div>
     </footer>
@@ -660,7 +660,6 @@ function Index() {
         <Servicos />
         <Processo />
         <Contato />
-        <Faq />
       </main>
       <Footer />
       <WhatsAppFloat />
