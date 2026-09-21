@@ -370,37 +370,6 @@ function Processo() {
   );
 }
 
-const FAQS = [
-  {
-    question: "Os projetos têm responsabilidade técnica?",
-    answer: `Sim, pela responsável técnica (${CREA}) com sua respectiva ART.`,
-  },
-  {
-    question: "Quanto tempo leva para entrega do projeto?",
-    answer:
-      "O prazo varia conforme o porte e a complexidade do empreendimento e é definido na proposta comercial. As condições e os prazos acordados são formalizados em contrato, garantindo clareza e compromisso com a entrega.",
-  },
-  {
-    question: "O que preciso fornecer para iniciar o projeto?",
-    answer:
-      "São solicitados os documentos e informações necessários sobre o empreendimento, como plantas existentes, dados da edificação e demais documentos conforme o serviço contratado.",
-  },
-  {
-    question: "Você cuida da aprovação junto ao CBMPE?",
-    answer:
-      "Sim. Quando a aprovação estiver incluída no serviço contratado, acompanho o processo junto ao CBMPE até a conclusão da etapa prevista na proposta.",
-  },
-  {
-    question: "Já tenho um projeto antigo. Preciso fazer outro?",
-    answer:
-      "Não necessariamente. Primeiro analiso o projeto existente e as condições atuais da edificação para verificar se é possível utilizá-lo, atualizá-lo ou se será necessária uma nova elaboração.",
-  },
-  {
-    question: "Depois da aprovação do projeto, o que preciso fazer?",
-    answer:
-      "Após a aprovação, devem ser executadas as medidas de segurança previstas no projeto. Conforme o serviço contratado, também posso realizar a assessoria nas etapas de regularização e obtenção do AVCB.",
-  },
-];
 
 function Faq() {
   const [open, setOpen] = useState<number | null>(null);
