@@ -112,7 +112,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="grid-paper relative overflow-hidden border-b border-border">
+    <section className="relative overflow-hidden border-b border-border">
       <div className="pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-primary/10 blur-3xl" />
       {/* Prancha como marca d'água cobrindo todo o fundo */}
       <div
@@ -174,7 +174,7 @@ function Hero() {
 
 function Sobre() {
   return (
-    <section id="sobre" className="grid-paper-dark bg-ink text-ink-foreground">
+    <section id="sobre" className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <img
@@ -334,7 +334,7 @@ const STEPS: {
 
 function Processo() {
   return (
-    <section id="processo" className="grid-paper-dark bg-ink text-ink-foreground">
+    <section id="processo" className="bg-ink text-ink-foreground">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionLabel>(03) Processo</SectionLabel>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
@@ -580,7 +580,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 function Duvidas() {
   return (
-    <section id="duvidas" className="grid-paper-dark bg-ink text-ink-foreground">
+    <section id="duvidas" className="bg-ink text-ink-foreground">
       <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
           (05) Dúvidas Frequentes
