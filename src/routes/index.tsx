@@ -7,6 +7,7 @@ import {
   Fuel,
   ArrowRight,
   Phone,
+  Clock,
   Mail,
   MessageCircle,
   ChevronDown,
@@ -601,8 +602,8 @@ function Duvidas() {
 function Footer() {
   return (
     <footer className="border-t border-border bg-ink text-ink-foreground">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
-        <div className="flex items-center gap-3">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-3">
+        <div className="flex flex-col items-start gap-3">
           <img
             src={logoWordWhite.url}
             alt="Talita Wanessa"
@@ -612,9 +613,42 @@ function Footer() {
             Engenheira Civil e de Segurança do Trabalho
           </p>
         </div>
-        <p className="font-mono text-[11px] text-ink-foreground/50">
-          {CREA} · CNPJ 64.476.545/0001-51 · © 2026 · Todos os direitos reservados
-        </p>
+        <div>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-foreground/50">
+            Informações de contato
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-ink-foreground/80">
+            <li>
+              <a
+                href={waLink("Olá, Talita! Vim pelo site e gostaria de mais informações.")}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-ink-foreground"
+              >
+                <Phone className="size-4 text-primary" aria-hidden="true" />
+                {WHATSAPP_DISPLAY}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="inline-flex items-center gap-2 transition-colors hover:text-ink-foreground"
+              >
+                <Mail className="size-4 text-primary" aria-hidden="true" />
+                {EMAIL}
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock className="size-4 text-primary" aria-hidden="true" />
+              Seg. a Sáb. – Das 9h às 18h
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col justify-end">
+          <p className="font-mono text-[11px] text-ink-foreground/50">
+            {CREA} · CNPJ 64.476.545/0001-51 · © 2026 · Todos os direitos reservados
+          </p>
+        </div>
       </div>
     </footer>
   );
