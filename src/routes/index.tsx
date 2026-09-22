@@ -179,7 +179,7 @@ function Sobre() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <img
-            src={talita1.url}
+            src={perfil.url}
             alt="Talita Wanessa agachada ao lado de notebook, trena e projetos técnicos"
             loading="lazy"
             className="w-full rounded-2xl border border-white/10 object-cover"
