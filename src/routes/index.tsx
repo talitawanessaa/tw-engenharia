@@ -640,7 +640,7 @@ function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Clock className="size-4 text-primary" aria-hidden="true" />
-              Seg. a Sáb. – Das 9h às 18h
+              Seg. a Sex. – Das 9h às 18h
             </li>
           </ul>
         </div>
