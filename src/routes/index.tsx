@@ -535,9 +535,9 @@ const FAQS = [
       "São solicitados os documentos e informações necessários sobre o empreendimento, como plantas existentes, dados da edificação e demais documentos conforme o serviço contratado.",
   },
   {
-    question: "Você cuida da aprovação junto ao CBMPE?",
+    question: "Você cuida da aprovação junto ao CBM?",
     answer:
-      "Sim. Quando a aprovação estiver incluída no serviço contratado, acompanho o processo junto ao CBMPE até a conclusão da etapa prevista na proposta.",
+      "Sim. Quando a aprovação estiver incluída no serviço contratado, acompanho o processo junto ao CBM até a conclusão da etapa prevista na proposta.",
   },
   {
     question: "Já tenho um projeto antigo. Preciso fazer outro?",
