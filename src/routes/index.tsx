@@ -12,7 +12,6 @@ import {
   MessageCircle,
   ChevronDown,
 } from "lucide-react";
-import talita1 from "@/assets/talita-1.jpg.asset.json";
 import plantaHero from "@/assets/planta-hero-2.png.asset.json";
 import perfil from "@/assets/perfil-2.png.asset.json";
 import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
