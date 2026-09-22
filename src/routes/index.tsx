@@ -345,7 +345,7 @@ function Processo() {
           <ol className="space-y-5">
             {STEPS.map((step, i) => (
               <li key={step.title} className="relative flex gap-5">
-                <span className="z-10 grid size-10 shrink-0 place-items-center rounded-full border border-border bg-card font-mono text-xs text-foreground/60">
+                <span className="z-10 grid size-10 shrink-0 place-items-center rounded-full border border-border bg-card font-mono text-xs font-semibold text-black">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1 rounded-xl border border-border bg-card p-5 shadow-sm">
