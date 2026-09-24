@@ -651,10 +651,14 @@ function Footer() {
           </ul>
         </div>
         <div className="flex flex-col justify-end">
-          <p className="font-mono text-[11px] text-ink-foreground/50">
-            {CREA} · CNPJ 64.476.545/0001-51 · © 2026 · Todos os direitos reservados
-          </p>
+          <div className="space-y-1 font-mono text-[11px] text-ink-foreground/50">
+            <p>{CREA}</p>
+            <p>CNPJ 64.476.545/0001-51</p>
+            <p>© 2026</p>
+            <p>Todos os direitos reservados</p>
+          </div>
         </div>
+
       </div>
     </footer>
   );
