@@ -100,11 +100,14 @@ function Header() {
           </a>
         </nav>
         <a
-          href="#contato"
+          href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
+          target="_blank"
+          rel="noreferrer"
           className="hidden rounded-md bg-ink px-4 py-2 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary sm:inline-flex"
         >
           Solicitar orçamento
         </a>
+
       </div>
     </header>
   );
@@ -141,12 +144,15 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href="#contato"
+              href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Solicitar orçamento
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
+
             <a
               href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
               target="_blank"
@@ -176,7 +182,7 @@ function Sobre() {
   return (
     <section id="sobre" className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 lg:order-2">
           <img
             src={perfil.url}
             alt="Talita Wanessa agachada ao lado de notebook, trena e projetos técnicos"
@@ -184,7 +190,8 @@ function Sobre() {
             className="w-full rounded-2xl border border-white/10 object-cover"
           />
         </div>
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 lg:order-1">
+
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
             (01) Sobre
           </p>
