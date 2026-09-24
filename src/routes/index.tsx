@@ -12,10 +12,10 @@ import {
   MessageCircle,
   ChevronDown,
 } from "lucide-react";
-import plantaHero from "@/assets/planta-hero-2.png.asset.json";
-import perfil from "@/assets/perfil-2.png.asset.json";
-import logoMarkRed from "@/assets/logo-mark-red.png.asset.json";
-import logoWordWhite from "@/assets/logo-word-white.png.asset.json";
+import plantaHero from "@/assets/planta-hero-2.png";
+import perfil from "@/assets/perfil-2.png";
+import logoMarkRed from "@/assets/logo-mark-red.png";
+import logoWordWhite from "@/assets/logo-word-white.png";
 
 // ============================================================
 // DADOS DE CONTATO — dados reais.
@@ -69,7 +69,7 @@ function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#" className="flex items-center gap-3">
           <img
-            src={logoMarkRed.url}
+            src={logoMarkRed}
             alt="Logomarca TW — Talita Wanessa"
             className="size-9 rounded-md object-contain"
           />
@@ -123,7 +123,7 @@ function Hero() {
         className="pointer-events-none absolute inset-0 select-none"
       >
         <img
-          src={plantaHero.url}
+          src={plantaHero}
           alt=""
           className="h-full w-full object-cover opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]"
         />
@@ -184,7 +184,7 @@ function Sobre() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-12">
         <div className="lg:col-span-5 lg:order-2">
           <img
-            src={perfil.url}
+            src={perfil}
             alt="Talita Wanessa agachada ao lado de notebook, trena e projetos técnicos"
             loading="lazy"
             className="w-full rounded-2xl border border-white/10 object-cover"
@@ -611,7 +611,7 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-3">
         <div className="flex flex-col items-start gap-3">
           <img
-            src={logoWordWhite.url}
+            src={logoWordWhite}
             alt="Talita Wanessa"
             className="h-10 w-auto"
           />
