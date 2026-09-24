@@ -100,9 +100,7 @@ function Header() {
           </a>
         </nav>
         <a
-          href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
-          target="_blank"
-          rel="noreferrer"
+          href="#contato"
           className="hidden rounded-md bg-ink px-4 py-2 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary sm:inline-flex"
         >
           Solicitar orçamento
@@ -144,9 +142,7 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
-              target="_blank"
-              rel="noreferrer"
+              href="#contato"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Solicitar orçamento
