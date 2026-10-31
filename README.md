@@ -1,6 +1,6 @@
 # Talita Wanessa Pro
 
-Site profissional e landing page para Talita Wanessa, Engenheira Civil e de Segurança do Trabalho. O site deve destacar serviços de elaboração e aprovação de projetos de combate a incêndio e pânico, processos de AVCB e CLCB, laudos técnicos e consultoria de segurança. Incluir apresentação profissional, seções de serviços detalhadas, processo de atendimento passo a passo, chamada para solicitação de orçamento, botão direto para WhatsApp e formulário de contato.
+Site profissional e landing page para Talita Wanessa, Engenheira Civil e de Segurança do Trabalho. O site deve destacar serviços de elaboração e aprovação de projetos de combate a incêndio e pânico, processos de AVCB e DLCB, laudos técnicos e consultoria de segurança. Incluir apresentação profissional, seções de serviços detalhadas, processo de atendimento passo a passo, chamada para solicitação de orçamento, botão direto para WhatsApp e formulário de contato.
 
 This project was built with [Lovable](https://lovable.dev).
 

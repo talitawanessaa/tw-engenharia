@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Projetos de combate a incêndio e pânico, AVCB e CLCB junto ao Corpo de Bombeiros, laudos técnicos e consultoria de segurança do trabalho.",
+          "Projetos de combate a incêndio e pânico, AVCB e DLCB junto ao Corpo de Bombeiros, laudos técnicos e consultoria de segurança do trabalho.",
       },
       { name: "author", content: "Talita Wanessa" },
       {
@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Projetos de incêndio e pânico, AVCB e CLCB, laudos técnicos e consultoria de segurança do trabalho.",
+          "Projetos de incêndio e pânico, AVCB e DLCB, laudos técnicos e consultoria de segurança do trabalho.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Talita Wanessa Engenharia" },
