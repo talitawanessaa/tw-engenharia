@@ -724,7 +724,7 @@ function Projetos() {
           <div>
             <SectionLabel>(04) Projetos realizados</SectionLabel>
             <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-              Quem já contou com meu trabalho.
+              Empresas que já contrataram meus serviços.
             </h2>
           </div>
           <p className="max-w-[36ch] text-pretty text-sm text-muted-foreground">
