@@ -2,7 +2,7 @@ import plazaLogo from "@/assets/plaza-mayor-logo.png.asset.json";
 import magaluLogo from "@/assets/magalu-logo.png.asset.json";
 import saintLogo from "@/assets/saint-eduardo-logo.png.asset.json";
 import adidasLogo from "@/assets/adidas-logo.png.asset.json";
-import zerezesLogo from "@/assets/zerezes-logo.png.asset.json";
+import zerezesLogo from "@/assets/zerezes-logo-2.png.asset.json";
 import villaLogo from "@/assets/villa219-logo.png.asset.json";
 import duarteImg from "@/assets/duarte-coelho.png.asset.json";
 import viaImg from "@/assets/via-capibaribe.png.asset.json";
