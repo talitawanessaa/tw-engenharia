@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
+  Building2,
   Flame,
   FileCheck2,
   FileSearch,
@@ -243,6 +244,9 @@ function Header() {
           <a href="#processo" className="nav-link transition-colors hover:text-foreground">
             Processo
           </a>
+          <a href="#projetos" className="nav-link transition-colors hover:text-foreground">
+            Projetos
+          </a>
           <a href="#contato" className="nav-link transition-colors hover:text-foreground">
             Contato
           </a>
@@ -251,7 +255,9 @@ function Header() {
           </a>
         </nav>
         <a
-          href="#contato"
+          href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
+          target="_blank"
+          rel="noreferrer"
           className="btn-shine hidden rounded-md bg-ink px-4 py-2 text-sm font-semibold text-ink-foreground transition-all hover:-translate-y-0.5 hover:bg-primary sm:inline-flex"
         >
           Solicitar orçamento
@@ -301,7 +307,9 @@ function Hero() {
             className="hero-in mt-8 flex flex-wrap items-center gap-3"
           >
             <a
-              href="#contato"
+              href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
+              target="_blank"
+              rel="noreferrer"
               className="btn-shine group inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
             >
               Solicitar orçamento
@@ -688,13 +696,66 @@ function ContactForm() {
   );
 }
 
+const CLIENTS = [
+  "Cond. Jardim Aurora",
+  "Cond. Duarte Coelho",
+  "Cond. Mar da Felicidade",
+  "Cond. Mar do Amor",
+  "Cond. Mar da Alegria",
+  "Cond. El. Dourado",
+  "Edf. Saint Eduardo",
+  "Plaza Mayor — Construtora Tecla",
+  "Via Capibaribe",
+  "Primeira Igreja Batista",
+  "Al Eventos (Villa 219)",
+  "Adidas — Loja Shopping Recife",
+  "Adidas — Loja Shopping Guararapes",
+  "Zezeres — Loja Shopping Recife",
+  "GVS Construtora",
+  "Magazine Luiza",
+  "Habitacional",
+];
+
+function Projetos() {
+  return (
+    <section id="projetos" className="border-y border-border bg-secondary/50">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <Reveal className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <SectionLabel>(04) Projetos realizados</SectionLabel>
+            <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+              Quem já contou com meu trabalho.
+            </h2>
+          </div>
+          <p className="max-w-[36ch] text-pretty text-sm text-muted-foreground">
+            Empreendimentos, lojas e empresas que já tiveram projeto, regularização ou vistoria
+            conduzidos por mim.
+          </p>
+        </Reveal>
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {CLIENTS.map((name, i) => (
+            <Reveal key={name} delay={(i % 3) * 80} className="h-full">
+              <article className="group flex h-full items-center gap-3 rounded-xl border border-border bg-card px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
+                <span className="grid size-8 shrink-0 place-items-center rounded-md bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Building2 className="size-4" aria-hidden="true" />
+                </span>
+                <span className="font-display text-sm font-bold tracking-tight">{name}</span>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contato() {
   return (
     <section id="contato" className="bg-background">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <SectionLabel>(04) Contato</SectionLabel>
+            <SectionLabel>(05) Contato</SectionLabel>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
               Solicite seu orçamento
             </h2>
@@ -789,7 +850,7 @@ function Duvidas() {
     <section id="duvidas" className="bg-ink text-ink-foreground">
       <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-          (05) Dúvidas Frequentes
+          (06) Dúvidas Frequentes
         </p>
         <h2 className="mt-4 max-w-[26ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
           Perguntas que sempre aparecem.
@@ -882,6 +943,7 @@ function Index() {
         <Sobre />
         <Servicos />
         <Processo />
+        <Projetos />
         <Contato />
         <Duvidas />
       </main>
