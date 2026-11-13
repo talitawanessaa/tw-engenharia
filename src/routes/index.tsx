@@ -1,3 +1,6 @@
+import plazaLogo from "@/assets/plaza-mayor-logo.png.asset.json";
+import magaluLogo from "@/assets/magalu-logo.png.asset.json";
+import saintLogo from "@/assets/saint-eduardo-logo.png.asset.json";
 import adidasLogo from "@/assets/adidas-logo.png.asset.json";
 import zerezesLogo from "@/assets/zerezes-logo.png.asset.json";
 import villaLogo from "@/assets/villa219-logo.png.asset.json";
@@ -708,8 +711,8 @@ const CLIENTS: (string | { name: string; img: string; photo?: boolean })[] = [
   "Cond. Mar do Amor",
   "Cond. Mar da Alegria",
   "Cond. El. Dourado",
-  "Edf. Saint Eduardo",
-  "Plaza Mayor — Construtora Tecla",
+  { name: "Edf. Saint Eduardo", img: saintLogo.url },
+  { name: "Plaza Mayor — Construtora Tecla", img: plazaLogo.url },
   { name: 'Via Capibaribe "Ilha do Retiro"', img: viaImg.url, photo: true },
   "Primeira Igreja Batista",
   { name: "Al Eventos (Villa 219)", img: villaLogo.url },
@@ -717,7 +720,7 @@ const CLIENTS: (string | { name: string; img: string; photo?: boolean })[] = [
   { name: "Adidas — Loja Shopping Guararapes", img: adidasLogo.url },
   { name: "Zerezes — Loja Shopping Recife", img: zerezesLogo.url },
   "GVS Construtora",
-  "Magazine Luiza",
+  { name: "Magazine Luiza", img: magaluLogo.url },
   "Habitacional",
 ];
 
