@@ -1,3 +1,8 @@
+import adidasLogo from "@/assets/adidas-logo.png.asset.json";
+import zerezesLogo from "@/assets/zerezes-logo.png.asset.json";
+import villaLogo from "@/assets/villa219-logo.png.asset.json";
+import duarteImg from "@/assets/duarte-coelho.png.asset.json";
+import viaImg from "@/assets/via-capibaribe.png.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
@@ -696,21 +701,21 @@ function ContactForm() {
   );
 }
 
-const CLIENTS = [
+const CLIENTS: (string | { name: string; img: string; photo?: boolean })[] = [
   "Cond. Jardim Aurora",
-  "Cond. Duarte Coelho",
+  { name: 'Cond. Duarte Coelho "Torres Gêmeas"', img: duarteImg.url, photo: true },
   "Cond. Mar da Felicidade",
   "Cond. Mar do Amor",
   "Cond. Mar da Alegria",
   "Cond. El. Dourado",
   "Edf. Saint Eduardo",
   "Plaza Mayor — Construtora Tecla",
-  "Via Capibaribe",
+  { name: 'Via Capibaribe "Ilha do Retiro"', img: viaImg.url, photo: true },
   "Primeira Igreja Batista",
-  "Al Eventos (Villa 219)",
-  "Adidas — Loja Shopping Recife",
-  "Adidas — Loja Shopping Guararapes",
-  "Zezeres — Loja Shopping Recife",
+  { name: "Al Eventos (Villa 219)", img: villaLogo.url },
+  { name: "Adidas — Loja Shopping Recife", img: adidasLogo.url },
+  { name: "Adidas — Loja Shopping Guararapes", img: adidasLogo.url },
+  { name: "Zerezes — Loja Shopping Recife", img: zerezesLogo.url },
   "GVS Construtora",
   "Magazine Luiza",
   "Habitacional",
@@ -733,16 +738,27 @@ function Projetos() {
           </p>
         </Reveal>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CLIENTS.map((name, i) => (
+          {CLIENTS.map((c, i) => {
+            const name = typeof c === "string" ? c : c.name;
+            const img = typeof c === "string" ? undefined : c.img;
+            const photo = typeof c !== "string" && c.photo;
+            return (
             <Reveal key={name} delay={(i % 3) * 80} className="h-full">
               <article className="group flex h-full items-center gap-3 rounded-xl border border-border bg-card px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
+                {img ? (
+                  <span className={`grid size-14 shrink-0 place-items-center overflow-hidden rounded-md border border-border ${photo ? "" : "bg-card p-1.5"}`}>
+                    <img src={img} alt={name} loading="lazy" className={photo ? "size-full object-cover" : "max-h-full max-w-full object-contain"} />
+                  </span>
+                ) : (
                 <span className="grid size-8 shrink-0 place-items-center rounded-md bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <Building2 className="size-4" aria-hidden="true" />
                 </span>
+                )}
                 <span className="font-display text-sm font-bold tracking-tight">{name}</span>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
