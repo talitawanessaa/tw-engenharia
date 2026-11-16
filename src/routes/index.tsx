@@ -6,6 +6,7 @@ import zerezesLogo from "@/assets/zerezes-logo-2.png.asset.json";
 import villaLogo from "@/assets/villa219-logo.png.asset.json";
 import duarteImg from "@/assets/duarte-coelho.png.asset.json";
 import viaImg from "@/assets/via-capibaribe.png.asset.json";
+import igrejaImg from "@/assets/primeira-igreja-batista.png.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
@@ -714,7 +715,7 @@ const CLIENTS: (string | { name: string; img: string; photo?: boolean })[] = [
   { name: "Edf. Saint Eduardo", img: saintLogo.url },
   { name: "Plaza Mayor — Construtora Tecla", img: plazaLogo.url },
   { name: 'Via Capibaribe "Ilha do Retiro"', img: viaImg.url, photo: true },
-  "Primeira Igreja Batista",
+  { name: "Primeira Igreja Batista", img: igrejaImg.url, photo: true },
   { name: "Al Eventos (Villa 219)", img: villaLogo.url },
   { name: "Adidas — Loja Shopping Recife", img: adidasLogo.url },
   { name: "Adidas — Loja Shopping Guararapes", img: adidasLogo.url },
