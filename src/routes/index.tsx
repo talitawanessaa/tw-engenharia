@@ -1,16 +1,6 @@
-import plazaLogo from "@/assets/plaza-mayor-logo.png.asset.json";
-import magaluLogo from "@/assets/magalu-logo.png.asset.json";
-import saintLogo from "@/assets/saint-eduardo-logo.png.asset.json";
-import adidasLogo from "@/assets/adidas-logo.png.asset.json";
-import zerezesLogo from "@/assets/zerezes-logo-2.png.asset.json";
-import villaLogo from "@/assets/villa219-logo.png.asset.json";
-import duarteImg from "@/assets/duarte-coelho.png.asset.json";
-import viaImg from "@/assets/via-capibaribe.png.asset.json";
-import igrejaImg from "@/assets/primeira-igreja-batista.png.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
-  Building2,
   Flame,
   FileCheck2,
   FileSearch,
@@ -252,9 +242,6 @@ function Header() {
           </a>
           <a href="#processo" className="nav-link transition-colors hover:text-foreground">
             Processo
-          </a>
-          <a href="#projetos" className="nav-link transition-colors hover:text-foreground">
-            Projetos
           </a>
           <a href="#contato" className="nav-link transition-colors hover:text-foreground">
             Contato
@@ -705,77 +692,13 @@ function ContactForm() {
   );
 }
 
-const CLIENTS: (string | { name: string; img: string; photo?: boolean })[] = [
-  "Cond. Jardim Aurora",
-  { name: 'Cond. Duarte Coelho "Torres Gêmeas"', img: duarteImg.url, photo: true },
-  "Cond. Mar da Felicidade",
-  "Cond. Mar do Amor",
-  "Cond. Mar da Alegria",
-  "Cond. El. Dourado",
-  { name: "Edf. Saint Eduardo", img: saintLogo.url },
-  { name: "Plaza Mayor — Construtora Tecla", img: plazaLogo.url },
-  { name: 'Via Capibaribe "Ilha do Retiro"', img: viaImg.url, photo: true },
-  { name: "Primeira Igreja Batista", img: igrejaImg.url, photo: true },
-  { name: "Al Eventos (Villa 219)", img: villaLogo.url },
-  { name: "Adidas — Loja Shopping Recife", img: adidasLogo.url },
-  { name: "Adidas — Loja Shopping Guararapes", img: adidasLogo.url },
-  { name: "Zerezes — Loja Shopping Recife", img: zerezesLogo.url },
-  "GVS Construtora",
-  { name: "Magazine Luiza", img: magaluLogo.url },
-  "Habitacional",
-];
-
-function Projetos() {
-  return (
-    <section id="projetos" className="border-y border-border bg-secondary/50">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <Reveal className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <SectionLabel>(04) Projetos realizados</SectionLabel>
-            <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-              Algumas empresas que já contrataram meus serviços.
-            </h2>
-          </div>
-          <p className="max-w-[36ch] text-pretty text-sm text-muted-foreground">
-            Empreendimentos, lojas e empresas que já tiveram projeto, regularização ou vistoria
-            conduzidos por mim.
-          </p>
-        </Reveal>
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CLIENTS.map((c, i) => {
-            const name = typeof c === "string" ? c : c.name;
-            const img = typeof c === "string" ? undefined : c.img;
-            const photo = typeof c !== "string" && c.photo;
-            return (
-            <Reveal key={name} delay={(i % 3) * 80} className="h-full">
-              <article className="group flex h-full items-center gap-3 rounded-xl border border-border bg-card px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
-                {img ? (
-                  <span className={`grid size-14 shrink-0 place-items-center overflow-hidden rounded-md border border-border ${photo ? "" : "bg-card p-1.5"}`}>
-                    <img src={img} alt={name} loading="lazy" className={photo ? "size-full object-cover" : "max-h-full max-w-full object-contain"} />
-                  </span>
-                ) : (
-                <span className="grid size-8 shrink-0 place-items-center rounded-md bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Building2 className="size-4" aria-hidden="true" />
-                </span>
-                )}
-                <span className="font-display text-sm font-bold tracking-tight">{name}</span>
-              </article>
-            </Reveal>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Contato() {
   return (
     <section id="contato" className="bg-background">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <SectionLabel>(05) Contato</SectionLabel>
+            <SectionLabel>(04) Contato</SectionLabel>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
               Solicite seu orçamento
             </h2>
@@ -870,7 +793,7 @@ function Duvidas() {
     <section id="duvidas" className="bg-ink text-ink-foreground">
       <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-          (06) Dúvidas Frequentes
+          (05) Dúvidas Frequentes
         </p>
         <h2 className="mt-4 max-w-[26ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
           Perguntas que sempre aparecem.
@@ -963,7 +886,6 @@ function Index() {
         <Sobre />
         <Servicos />
         <Processo />
-        <Projetos />
         <Contato />
         <Duvidas />
       </main>
