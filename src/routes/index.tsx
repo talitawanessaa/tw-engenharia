@@ -13,7 +13,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import plantaHero from "@/assets/planta-hero-2.png";
-import perfil from "@/assets/perfil-2.png";
+import perfil from "@/assets/ensaio-talita-6.jpg.asset.json";
 import logoMarkRed from "@/assets/logo-mark-red.png";
 import logoWordWhite from "@/assets/logo-word-white.png";
 
@@ -358,8 +358,8 @@ function Sobre() {
             />
             <div className="relative overflow-hidden rounded-2xl border border-white/10">
               <img
-                src={perfil}
-                alt="Talita Wanessa agachada ao lado de notebook, trena e projetos técnicos"
+                src={perfil.url}
+                alt="Talita Wanessa, retrato de estúdio"
                 loading="lazy"
                 className="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
