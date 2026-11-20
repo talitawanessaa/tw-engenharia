@@ -13,9 +13,18 @@ import {
   ChevronDown,
 } from "lucide-react";
 import plantaHero from "@/assets/planta-hero-2.png";
-import perfil from "@/assets/ensaio-talita-6.jpg.asset.json";
+import perfil from "@/assets/perfil.png";
 import logoMarkRed from "@/assets/logo-mark-red.png";
 import logoWordWhite from "@/assets/logo-word-white.png";
+import adidasLogo from "@/assets/adidas-logo.png";
+import duarteCoelhoLogo from "@/assets/duarte-coelho.png";
+import magaluLogo from "@/assets/magalu-logo.png";
+import plazaMayorLogo from "@/assets/plaza-mayor-logo.png";
+import primeiraIgrejaLogo from "@/assets/primeira-igreja-batista.png";
+import saintEduardoLogo from "@/assets/saint-eduardo-logo.png";
+import viaCapibaribeLogo from "@/assets/via-capibaribe.png";
+import villa219Logo from "@/assets/villa219-logo.png";
+import zerezesLogo from "@/assets/zerezes-logo-2.png";
 
 // ============================================================
 // DADOS DE CONTATO — dados reais.
@@ -243,6 +252,9 @@ function Header() {
           <a href="#processo" className="nav-link transition-colors hover:text-foreground">
             Processo
           </a>
+          <a href="#clientes" className="nav-link transition-colors hover:text-foreground">
+            Clientes
+          </a>
           <a href="#contato" className="nav-link transition-colors hover:text-foreground">
             Contato
           </a>
@@ -251,9 +263,7 @@ function Header() {
           </a>
         </nav>
         <a
-          href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
-          target="_blank"
-          rel="noreferrer"
+          href="#contato"
           className="btn-shine hidden rounded-md bg-ink px-4 py-2 text-sm font-semibold text-ink-foreground transition-all hover:-translate-y-0.5 hover:bg-primary sm:inline-flex"
         >
           Solicitar orçamento
@@ -303,9 +313,7 @@ function Hero() {
             className="hero-in mt-8 flex flex-wrap items-center gap-3"
           >
             <a
-              href={waLink("Olá, Talita! Gostaria de solicitar um orçamento.")}
-              target="_blank"
-              rel="noreferrer"
+              href="#contato"
               className="btn-shine group inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
             >
               Solicitar orçamento
@@ -358,7 +366,7 @@ function Sobre() {
             />
             <div className="relative overflow-hidden rounded-2xl border border-white/10">
               <img
-                src={perfil.url}
+                src={perfil}
                 alt="Talita Wanessa, retrato de estúdio"
                 loading="lazy"
                 className="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -502,6 +510,108 @@ function Servicos() {
               </p>
             </div>
           </a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+const BRAND_CLIENTS = [
+  { name: "Adidas", logo: adidasLogo },
+  { name: "Magazine Luiza", logo: magaluLogo },
+  { name: "Plaza Mayor", logo: plazaMayorLogo },
+  { name: "Villa 219", logo: villa219Logo },
+  { name: "Zerezes", logo: zerezesLogo },
+];
+
+const PROJECTS = [
+  { name: "Via Capibaribe", photo: viaCapibaribeLogo },
+  { name: "Saint Eduardo", photo: saintEduardoLogo },
+  { name: "Duarte Coelho", photo: duarteCoelhoLogo },
+  { name: "Primeira Igreja Batista", photo: primeiraIgrejaLogo },
+];
+
+function Clientes() {
+  return (
+    <section id="clientes" className="border-y border-border bg-card">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <Reveal className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <SectionLabel>(04) Clientes</SectionLabel>
+            <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
+              Projetos que já saíram do papel.
+            </h2>
+          </div>
+          <p className="max-w-[38ch] text-pretty text-sm text-muted-foreground">
+            Uma seleção de empresas, empreendimentos e instituições atendidas em projetos de
+            segurança contra incêndio e pânico.
+          </p>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            Empresas e marcas
+          </p>
+        </Reveal>
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {BRAND_CLIENTS.map(({ name, logo }, i) => (
+            <Reveal key={name} delay={i * 70} className="h-full">
+              <figure
+                className="group flex h-32 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 sm:h-36"
+                title={name}
+              >
+                <img
+                  src={logo}
+                  alt={`Logo ${name}`}
+                  loading="lazy"
+                  className="h-full w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={100}>
+          <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            Empreendimentos e instituições
+          </p>
+        </Reveal>
+        <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {PROJECTS.map(({ name, photo }, i) => (
+            <Reveal key={name} delay={i * 80} className="h-full">
+              <figure className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-ink">
+                <img
+                  src={photo}
+                  alt={name}
+                  loading="lazy"
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <figcaption className="absolute inset-x-0 bottom-0 p-4">
+                  <span className="block h-0.5 w-8 bg-primary transition-all duration-300 group-hover:w-14" />
+                  <span className="mt-2 block font-display text-sm font-semibold leading-tight text-white sm:text-base">
+                    {name}
+                  </span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={150}>
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-primary/30 bg-primary/5 p-6">
+            <p className="max-w-[48ch] text-pretty text-sm text-muted-foreground sm:text-base">
+              <strong className="font-semibold text-foreground">E muitos outros.</strong> Esta é
+              apenas uma parte dos projetos entregues. Seu empreendimento pode ser o próximo.
+            </p>
+            <a
+              href="#contato"
+              className="btn-shine group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90"
+            >
+              Solicitar orçamento
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>
@@ -698,7 +808,7 @@ function Contato() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <SectionLabel>(04) Contato</SectionLabel>
+            <SectionLabel>(05) Contato</SectionLabel>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
               Solicite seu orçamento
             </h2>
@@ -886,6 +996,7 @@ function Index() {
         <Sobre />
         <Servicos />
         <Processo />
+        <Clientes />
         <Contato />
         <Duvidas />
       </main>
